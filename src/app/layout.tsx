@@ -1,8 +1,22 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Barlow, Koulen } from "next/font/google";
+import { clsx } from "clsx";
+
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const koulen = Koulen({
+  subsets: ["latin"],
+  variable: "--font-koulen",
+  display: "swap",
+  weight: ["400"],
+});
+
+const barlow = Barlow({
+  subsets: ["latin"],
+  variable: "--font-barlow",
+  display: "swap",
+  weight: ["300", "400", "700"],
+});
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -16,7 +30,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body
+        className={clsx(
+          koulen.variable,
+          barlow.variable,
+          "relative z-50 bg-[#090907] after:pointer-events-none after:absolute after:inset-0 after:size-full after:select-none after:bg-noise after:bg-repeat after:content-['']",
+        )}
+      >
+        {children}
+      </body>
     </html>
   );
 }
