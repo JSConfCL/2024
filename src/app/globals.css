@@ -31,3 +31,22 @@ body {
     text-wrap: balance;
   }
 }
+
+.link:hover:after {
+  --active: 1;
+  background: radial-gradient(
+    circle at calc(var(--x) * 1px) calc(var(--y) * 1px),
+    hsl(54 80% 65% / 0.15),
+    transparent 15vmin
+  );
+}
+
+.link:hover:before {
+  --active: 1;
+  background: radial-gradient(
+      circle at calc(var(--x) * 1px) calc(var(--y) * 1px),
+      hsl(54 80% 65% / 0.15),
+      transparent 15vmin
+    ),
+    transparent;
+}
