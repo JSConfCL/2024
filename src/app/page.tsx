@@ -7,8 +7,13 @@ import { Title } from "@/components/Icons/Title";
 import { Link } from "@/components/Link";
 import { Particles } from "@/components/Particles";
 import { data, footer, links } from "@/lib/data";
+import { getMetaData, getViewports } from "@/lib/metadata";
 import { theme } from "@/lib/theme";
 import { cn } from "@/lib/utils";
+
+export const generateMetadata = getMetaData;
+
+export const generateViewport = getViewports;
 
 export default function Home() {
   return (
