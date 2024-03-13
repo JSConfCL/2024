@@ -28,7 +28,7 @@ export const data = [
         text: [
           "Asóciate con JSConf Chile como patrocinador y posiciona tu marca en la vanguardia de la industria tecnológica. Esta oportunidad única te permite conectar con líderes de pensamiento, ganar una exposición significativa y contribuir al crecimiento de la comunidad tecnológica. Tu apoyo ayuda a fomentar la innovación y conectar con una audiencia diversa.",
         ],
-        url: "mailto:sponsor@jsconf.cl",
+        url: "https://tally.so/r/mO5j9A",
         actionTitle: "Ser Sponsor",
       },
       {
