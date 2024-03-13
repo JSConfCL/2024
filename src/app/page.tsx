@@ -84,7 +84,11 @@ export default function Home() {
                 lanzamientos innovadores. ¿Listo para destacar? ¡Háznoslo saber!
               </div>
               <div className="mx-auto inline-block">
-                <Link href="mailto:sponsor@jsconf.cl">
+                <Link
+                  href="https://tally.so/r/mO5j9A"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Ser Sponsor <Star size={16} />
                 </Link>
               </div>
