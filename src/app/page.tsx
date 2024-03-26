@@ -1,8 +1,9 @@
 import { ChevronDown, Star } from "lucide-react";
+
 import { Card } from "@/components/Card";
+import { Header } from "@/components/Header";
 import { Mountain } from "@/components/Icons/Mountain";
 import { Title } from "@/components/Icons/Title";
-import { Header } from "@/components/Header";
 import { Link } from "@/components/Link";
 import { Particles } from "@/components/Particles";
 import { data, footer } from "@/lib/data";

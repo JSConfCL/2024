@@ -1,7 +1,7 @@
-import { Logo } from "@/components/Icons/Logo";
 import { HeaderLink } from "@/components/HeaderLink";
-import { theme } from "@/lib/theme";
+import { Logo } from "@/components/Icons/Logo";
 import { links } from "@/lib/data";
+import { theme } from "@/lib/theme";
 
 export function Header() {
   return (
@@ -10,7 +10,9 @@ export function Header() {
         <Logo color={theme?.colors?.jsconfYellow} size="36" />
       </a>
       <div className="flex items-center gap-6">
-        {links.map((link) => <HeaderLink key={link.id} link={link} />)}
+        {links.map((link) => (
+          <HeaderLink key={link.id} link={link} />
+        ))}
       </div>
     </header>
   );
