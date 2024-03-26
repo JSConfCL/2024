@@ -9,6 +9,7 @@ if (
   process.env.NEXT_PUBLIC_POSTHOG_HOST
 ) {
   posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
+    ui_host: process.env.NEXT_PUBLIC_POSTHOG_UI_HOST,
     api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
   });
 }
