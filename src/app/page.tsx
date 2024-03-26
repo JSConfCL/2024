@@ -1,3 +1,4 @@
+import { EventInfo } from "@/sections/EventInfo/EventInfo";
 import {
   ChevronDown,
   Facebook,
@@ -76,9 +77,7 @@ export default function Home() {
               <h1 className="mx-auto w-[180px] lg:w-[255px]">
                 <Title />
               </h1>
-              <div className="mx-auto text-center font-barlow text-3xl tracking-[.25em] md:w-4/6 lg:w-full lg:text-5xl">
-                Muy Pronto
-              </div>
+              <EventInfo />
               <div className="mx-auto text-center md:w-4/6 lg:w-full lg:text-2xl">
                 Buscamos sponsors para talento, exposición de marca o
                 lanzamientos innovadores. ¿Listo para destacar? ¡Háznoslo saber!
