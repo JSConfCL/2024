@@ -28,6 +28,7 @@ const config: Config = {
       fontFamily: {
         koulen: ['var(--font-koulen)'],
         barlow: ['var(--font-barlow)'],
+        inconsolata: ['var(--font-inconsolata)']
       },
       keyframes: {
         "gradient-text": {
