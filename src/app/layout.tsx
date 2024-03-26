@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Barlow, Inconsolata, Koulen } from "next/font/google";
 import { clsx } from "clsx";
 
+import { CSPostHogProvider } from "./providers";
+
 import "./globals.css";
 
 const koulen = Koulen({
@@ -37,16 +39,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={clsx(
-          koulen.variable,
-          barlow.variable,
-          inconsolata.variable,
-          "relative z-50 bg-[#090907] after:pointer-events-none after:absolute after:inset-0 after:size-full after:select-none after:bg-noise after:bg-repeat after:content-['']",
-        )}
-      >
-        {children}
-      </body>
+      <CSPostHogProvider>
+        <body
+          className={clsx(
+            koulen.variable,
+            barlow.variable,
+            inconsolata.variable,
+            "relative z-50 bg-[#090907] after:pointer-events-none after:absolute after:inset-0 after:size-full after:select-none after:bg-noise after:bg-repeat after:content-['']",
+          )}
+        >
+          {children}
+        </body>
+      </CSPostHogProvider>
     </html>
   );
 }
