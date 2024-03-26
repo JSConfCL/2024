@@ -1,4 +1,4 @@
-import { HeaderLink } from "@/components/HeaderLink";
+import { HeaderLink } from "@/components/Header/HeaderLink";
 import { Logo } from "@/components/Icons/Logo";
 import { links } from "@/lib/data";
 import { theme } from "@/lib/theme";
