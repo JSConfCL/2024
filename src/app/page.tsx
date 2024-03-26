@@ -1,21 +1,13 @@
-import {
-  ChevronDown,
-  Facebook,
-  Instagram,
-  Linkedin,
-  Star,
-  Twitter,
-} from "lucide-react";
+import { ChevronDown, Star } from "lucide-react";
 
 import { Card } from "@/components/Card";
-import { Logo } from "@/components/Icons/Logo";
+import { Header } from "@/components/Header/Header";
 import { Mountain } from "@/components/Icons/Mountain";
 import { Title } from "@/components/Icons/Title";
 import { Link } from "@/components/Link";
 import { Particles } from "@/components/Particles";
-import { data, footer, links } from "@/lib/data";
+import { data, footer } from "@/lib/data";
 import { getMetaData, getViewports } from "@/lib/metadata";
-import { theme } from "@/lib/theme";
 import { cn } from "@/lib/utils";
 
 export const generateMetadata = getMetaData;
@@ -44,34 +36,7 @@ export default function Home() {
             </div>
           </div>
           <div className="z-[1]">
-            <header className="container relative z-10 mx-auto flex h-20 w-full items-center justify-between p-4 text-jsconf-yellow">
-              <a href="/">
-                <Logo color={theme?.colors?.jsconfYellow} size="36" />
-              </a>
-              <div className="flex items-center gap-6">
-                {links.map((link) => (
-                  <a
-                    key={link.id}
-                    id={link.id}
-                    className="rounded-full p-2 hover:bg-[#EDE06033]"
-                    target="_blank"
-                    rel="noreferrer"
-                    href={link.url}
-                  >
-                    {link.id == "linkedin" ? (
-                      <Linkedin strokeWidth={1} />
-                    ) : null}
-                    {link.id == "instagram" ? (
-                      <Instagram strokeWidth={1} />
-                    ) : null}
-                    {link.id == "twitter" ? <Twitter strokeWidth={1} /> : null}
-                    {link.id == "facebook" ? (
-                      <Facebook strokeWidth={1} />
-                    ) : null}
-                  </a>
-                ))}
-              </div>
-            </header>
+            <Header />
             <div className="mx-auto flex h-[calc(100vh_-_80px)] w-[400px] max-w-[90%] flex-auto flex-col justify-center gap-8 text-left text-white md:w-[746px] lg:shrink-0 lg:basis-1/3">
               <h1 className="mx-auto w-[180px] lg:w-[255px]">
                 <Title />
