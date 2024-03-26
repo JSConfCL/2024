@@ -5,6 +5,7 @@ const config: Config = {
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/sections/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
@@ -28,6 +29,7 @@ const config: Config = {
       fontFamily: {
         koulen: ['var(--font-koulen)'],
         barlow: ['var(--font-barlow)'],
+        inconsolata: ['var(--font-inconsolata)']
       },
       keyframes: {
         "gradient-text": {

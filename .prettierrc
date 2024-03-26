@@ -10,6 +10,7 @@
     "",
     "^types$",
     "^@/types/(.*)$",
+    "^@/sections/(.*)$", 
     "^@/components/ui/(.*)$",
     "^@/components/(.*)$",
     "^@/hooks/(.*)$",
