@@ -1,12 +1,13 @@
 import { ChevronDown, Star } from "lucide-react";
 
 import { Card } from "@/components/Card";
+import { Footer } from "@/components/Footer/Footer";
 import { Header } from "@/components/Header/Header";
 import { Mountain } from "@/components/Icons/Mountain";
 import { Title } from "@/components/Icons/Title";
 import { Link } from "@/components/Link";
 import { Particles } from "@/components/Particles";
-import { data, footer } from "@/lib/data";
+import { data } from "@/lib/data";
 import { getMetaData, getViewports } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
 
@@ -94,7 +95,7 @@ export default function Home() {
           ))}
         </div>
       </main>
-      <footer className="relative z-10 p-4 font-koulen text-white">
+      {/* <footer className="relative z-10 p-4 font-koulen text-white">
         <div className="container mx-auto flex flex-col items-center justify-center gap-4 lg:flex-row">
           <div className="flex flex-col gap-4 text-center lg:flex-row lg:gap-8">
             {footer.map((link) => (
@@ -110,7 +111,8 @@ export default function Home() {
             ))}
           </div>
         </div>
-      </footer>
+      </footer> */}
+      <Footer />
     </>
   );
 }
