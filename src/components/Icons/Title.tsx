@@ -1,7 +1,12 @@
-export const Title = () => (
+interface propsType {
+  width?: string;
+  height?: string;
+}
+
+export const Title = ({ width = "100%", height = "100%" }: propsType) => (
   <svg
-    width="100%"
-    height="100%"
+    width={width}
+    height={height}
     viewBox="0 0 178 103"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
