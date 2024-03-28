@@ -1,9 +1,23 @@
 import { JSCONF } from "./data";
 
-export const getMetaData = () => {
+interface GetMetaDataProps {
+  title?: string;
+  description?: string;
+  image?: string;
+}
+
+export const getMetaData = ({
+  title: _title,
+  description: _description,
+  image: _image,
+}: GetMetaDataProps) => {
   const url = "https://jsconf.cl/";
-  const title = `JSConf Chile: ${JSCONF.strDates} | Conferencia de Javascript en Santiago Chile`;
-  const description = `JSConf Chile: ${JSCONF.strDates} | Ya estamos trabajando en la nueva JSConf Chile. Mantente informado`;
+  const title =
+    _title ??
+    `JSConf Chile: ${JSCONF.strDates} | Conferencia de Javascript en Santiago Chile`;
+  const description =
+    _description ??
+    `JSConf Chile: ${JSCONF.strDates} | Ya estamos trabajando en la nueva JSConf Chile. Mantente informado`;
   const images = ["/images/og-image.jpg"];
 
   return {

@@ -11,7 +11,7 @@ import { data, footer } from "@/lib/data";
 import { getMetaData, getViewports } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
 
-export const generateMetadata = getMetaData;
+export const generateMetadata = () => getMetaData({});
 
 export const generateViewport = getViewports;
 
