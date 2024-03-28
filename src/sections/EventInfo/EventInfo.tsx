@@ -3,7 +3,6 @@
 import React, { useEffect, useRef, useState } from "react";
 
 import { JSCONF } from "@/lib/data";
-import { formatDate } from "@/lib/date";
 
 const SECOND = 1000;
 const MINUTE = SECOND * 60;
@@ -88,7 +87,7 @@ export const EventInfo = () => {
   return (
     <div className="flex flex-col gap-4">
       <div className="flex flex-col items-center justify-center gap-4 md:flex-row	">
-        <InfoValue title="Fecha" value={`"${formatDate(JSCONF.startDate)}"`} />
+        <InfoValue title="Fecha" value={`"${JSCONF.strDates}"`} />
         <InfoValue title="Lugar" value="Santiago, Chile" />
       </div>
       <Countdown />
