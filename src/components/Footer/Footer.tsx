@@ -51,20 +51,20 @@ export function Footer() {
                   />
                   <button
                     type="submit"
-                    className="w-full rounded-lg bg-jsconf-yellow p-2 text-gray-800 lg:w-36"
+                    className="w-full rounded-lg bg-jsconf-yellow p-2 text-gray-800 transition-all duration-300 ease-in-out hover:bg-jsconf-red hover:text-white lg:w-36"
                   >
                     Suscribirme
                   </button>
                 </form>
                 <p className="text-balance text-right text-sm text-gray-500">
                   Te haremos llegar información y actualizaciones de la
-                  conferencia
+                  conferencia.
                 </p>
               </div>
             </div>
           </div>
           <div className="flex">
-            <p className="w-full text-center">
+            <p className="w-full text-center text-gray-400">
               Con ❤️ - El equipo JSConf Chile
             </p>
           </div>
