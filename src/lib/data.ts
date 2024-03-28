@@ -72,6 +72,41 @@ export const data = [
   },
 ];
 
+export const cfp = {
+  id: "cfp",
+  sections: [
+    {
+      title: "Registro CFP",
+      description:
+        "JSconf es un evento Open Source, sin fines de lucro, realizado por la comunidad y para la comunidad. Es por ello que si quieres ser parte y aportar con tus conocimientos, te invitamos a postular en nuestro CFP.",
+      image: {
+        src: "/images/siete_tazas.jpg",
+        name: "Siete Tazas",
+        place: "Región del Maule",
+      },
+      cta: {
+        text: "Registro CFP",
+        url: "https://cfp.jsconf.cl/",
+      },
+    },
+    {
+      image: {
+        src: "/images/jsconf2023_matucana100.jpg",
+        name: "JSConf 2023 - Teatro Matucana 100",
+      },
+      benefits: {
+        title: "Beneficios",
+        list: [
+          "Kit de bienvenida para charlistas",
+          "Estarás en contacto con más charlistas de renombre",
+          "Tu video de JSConf en el youtube con más de 200k seguidores.",
+          "Sabemos que Chile es un lugar espectacular en primavera, felices de coordinar tus vuelos para que pases una excelente primavera.",
+        ],
+      },
+    },
+  ],
+};
+
 export const footer = [
   {
     id: 1,

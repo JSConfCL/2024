@@ -1,4 +1,4 @@
-import { ChevronDown, Star } from "lucide-react";
+import { ChevronDown, ScrollText, Star } from "lucide-react";
 
 import { EventInfo } from "@/sections/EventInfo/EventInfo";
 import { Card } from "@/components/Card";
@@ -11,7 +11,7 @@ import { data, footer } from "@/lib/data";
 import { getMetaData, getViewports } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
 
-export const generateMetadata = getMetaData;
+export const generateMetadata = () => getMetaData({});
 
 export const generateViewport = getViewports;
 
@@ -47,14 +47,21 @@ export default function Home() {
                 Buscamos sponsors para talento, exposición de marca o
                 lanzamientos innovadores. ¿Listo para destacar? ¡Háznoslo saber!
               </div>
-              <div className="mx-auto inline-block">
-                <Link
-                  href="https://tally.so/r/mO5j9A"
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Ser Sponsor <Star size={16} />
-                </Link>
+              <div className="flex flex-col justify-center gap-2 md:flex-row md:gap-4">
+                <div className="w-full md:w-auto">
+                  <Link
+                    href="https://tally.so/r/mO5j9A"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Ser Sponsor <Star size={16} />
+                  </Link>
+                </div>
+                <div className="w-full md:w-auto">
+                  <Link href="/cfp" variant="outline">
+                    Registro CFP <ScrollText size={16} />
+                  </Link>
+                </div>
               </div>
               <a
                 href="#more-info"
