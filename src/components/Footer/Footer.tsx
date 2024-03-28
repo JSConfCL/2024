@@ -7,7 +7,7 @@ import { theme } from "@/lib/theme";
 export function Footer() {
   return (
     <footer className="relative z-10 text-white">
-      <div className="pointer-events-none absolute z-10 h-[580px] w-[40%] bg-gradient-to-r from-transparent via-yellow-400 to-transparent opacity-[0.1] lg:h-[290px] lg:w-[60%]"></div>
+      <div className="pointer-events-none absolute inset-0 z-10 w-[40%] bg-gradient-to-r from-transparent via-yellow-400 to-transparent opacity-[0.1] lg:w-[60%]"></div>
       <div className="mx-6 flex flex-col py-14 lg:mx-auto lg:w-11/12 xl:w-8/12">
         <div className="flex w-full flex-col gap-8">
           <div className="grid grid-cols-1 gap-6 px-20 lg:grid-cols-8 lg:gap-8 lg:px-0">
