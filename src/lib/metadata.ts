@@ -1,10 +1,9 @@
 import { JSCONF } from "./data";
-import { formatDate } from "./date";
 
 export const getMetaData = () => {
   const url = "https://jsconf.cl/";
-  const title = `JSConf Chile 2024: ${formatDate(JSCONF.startDate)} | Conferencia de Javascript en Santiago Chile`;
-  const description = `JSConf Chile 2024: ${formatDate(JSCONF.startDate)} | Ya estamos trabajando en la nueva JSConf Chile. Mantente informado`;
+  const title = `JSConf Chile: ${JSCONF.strDates} | Conferencia de Javascript en Santiago Chile`;
+  const description = `JSConf Chile: ${JSCONF.strDates} | Ya estamos trabajando en la nueva JSConf Chile. Mantente informado`;
   const images = ["/images/og-image.jpg"];
 
   return {
