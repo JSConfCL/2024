@@ -1,4 +1,4 @@
-import { ChevronDown, Star } from "lucide-react";
+import { ChevronDown, Star, Calendar } from "lucide-react";
 
 import { EventInfo } from "@/sections/EventInfo/EventInfo";
 import { Card } from "@/components/Card";
@@ -10,6 +10,7 @@ import { Particles } from "@/components/Particles";
 import { data, footer } from "@/lib/data";
 import { getMetaData, getViewports } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
+import { ButtonSaveInCalendar } from "@/components/ButtonSaveInCalendar";
 
 export const generateMetadata = getMetaData;
 
@@ -47,7 +48,7 @@ export default function Home() {
                 Buscamos sponsors para talento, exposición de marca o
                 lanzamientos innovadores. ¿Listo para destacar? ¡Háznoslo saber!
               </div>
-              <div className="mx-auto inline-block">
+              <div className="mx-auto flex items-center gap-4 lg:min-w-[450px]">
                 <Link
                   href="https://tally.so/r/mO5j9A"
                   target="_blank"
@@ -55,6 +56,9 @@ export default function Home() {
                 >
                   Ser Sponsor <Star size={16} />
                 </Link>
+                <ButtonSaveInCalendar>
+                  Agendar evento <Calendar size={16} />
+                </ButtonSaveInCalendar>
               </div>
               <a
                 href="#more-info"
