@@ -7,20 +7,22 @@ import { theme } from "@/lib/theme";
 export function Footer() {
   return (
     <footer className="relative z-10 text-white">
-      <div className="pointer-events-none absolute inset-0 z-10 w-[40%] bg-gradient-to-r from-transparent via-yellow-400 to-transparent opacity-[0.1] lg:w-[60%]"></div>
+      <div className="pointer-events-none absolute inset-0 z-10 hidden w-[60%] bg-gradient-to-r from-transparent via-jsconf-yellow to-transparent opacity-10 md:inline-block"></div>
+      <div className="pointer-events-none absolute inset-0 z-10 w-[80%] bg-gradient-to-r from-jsconf-yellow via-jsconf-yellow to-transparent opacity-10 md:hidden"></div>
       <div className="mx-6 flex flex-col py-14 lg:mx-auto lg:w-11/12 xl:w-8/12">
+        <div className="absolute top-0 ml-[25%] w-full rounded-full bg-gradient-to-r from-transparent via-jsconf-yellow to-transparent p-[0.4px] lg:w-[550px]"></div>
         <div className="flex w-full flex-col gap-8">
-          <div className="grid grid-cols-1 gap-6 px-20 lg:grid-cols-8 lg:gap-8 lg:px-0">
+          <div className="grid grid-cols-1 gap-6 px-6 lg:grid-cols-8 lg:gap-8 lg:px-0">
             <div className="col-span-1 flex flex-col items-center gap-4 lg:col-span-2 lg:items-start">
               <div className="flex">
-                <a href="/" className="flex items-center gap-1">
-                  <Logo color={theme?.colors?.jsconfYellow} size="38" />
-                  <Title width="64" height="46" />
+                <a href="/" className="flex items-center gap-3">
+                  <Logo color={theme?.colors?.jsconfYellow} size="52" />
+                  <Title width="82" />
                 </a>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center text-jsconf-yellow">
                 <span>Siguenos: </span>
-                <div className="ml-2 flex items-center gap-1 text-jsconf-yellow">
+                <div className="ml-2 flex items-center gap-1">
                   {links.map((link) => (
                     <HeaderLink key={link.id} link={link} />
                   ))}
@@ -56,7 +58,7 @@ export function Footer() {
                     Suscribirme
                   </button>
                 </form>
-                <p className="text-balance text-right text-sm text-gray-500">
+                <p className="text-balance text-center text-sm text-gray-500 lg:text-right">
                   Te haremos llegar información y actualizaciones de la
                   conferencia.
                 </p>
