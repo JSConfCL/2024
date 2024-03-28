@@ -94,5 +94,6 @@ export const footer = [
 export const JSCONF = {
   startDate: new Date("09/05/2024 09:00:00"),
   endDate: new Date("09/07/2024 17:00:00"),
+  strDates: "SEP 05, 06, 07 2024",
   place: "Santiago, Chile",
 };
