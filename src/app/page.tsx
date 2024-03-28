@@ -20,7 +20,7 @@ export default function Home() {
     <>
       <main className="text-white">
         <div className="relative h-screen">
-          <div className="absolute inset-0">
+          <div className="pointer-events-none absolute inset-0">
             <div className="flex h-screen w-full items-center justify-center">
               <div className="absolute">
                 <div className="relative -z-30 mx-auto w-[400px] max-w-[90%] animate-gradient-svg from-mountain-primary to-mountain-secondary blur-[1px] md:w-[746px] md:blur-sm lg:w-[900px] xl:w-[1200px]">
