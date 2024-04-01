@@ -1,50 +1,40 @@
 "use client";
 
 import React from "react";
+import NextLink from "next/link";
+import { cva, type VariantProps } from "class-variance-authority";
 
-interface CustomLinkProps {
+import { cn } from "@/lib/utils";
+
+const linkVariants = cva(
+  "relative mb-2 flex w-full items-center justify-center gap-3 rounded-md px-8 py-4 text-sm font-semibold",
+  {
+    variants: {
+      variant: {
+        default: "bg-jsconf-yellow text-black hover:bg-[#C8BC4F]",
+        outline:
+          "border border-jsconf-yellow bg-stone-950 text-white hover:bg-stone-900",
+      },
+    },
+    defaultVariants: {
+      variant: "default",
+    },
+  },
+);
+
+export interface CustomLinkProps extends VariantProps<typeof linkVariants> {
   href: string;
   children: string | React.ReactNode;
   target?: string;
   rel?: string;
 }
 
-export const Link = ({ children, ...props }: CustomLinkProps) => {
-  function handleMouseMove(e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) {
-    const target = e.target as HTMLDivElement;
-    const rect = target.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-
-    target.style.setProperty("--x", x.toString());
-    target.style.setProperty("--y", y.toString());
-  }
+export const Link = ({ variant, children, ...props }: CustomLinkProps) => {
+  const Comp = props.href.startsWith("/") ? NextLink : "a";
 
   return (
-    <a
-      {...props}
-      onMouseMove={handleMouseMove}
-      className={`
-        relative
-        mb-2
-        flex
-        w-full
-        items-center
-        justify-center
-        gap-3
-        rounded-md
-
-        bg-jsconf-yellow
-        px-8
-        py-4
-        text-sm
-        font-medium
-        text-black
-
-        hover:bg-[#C8BC4F]
-    `}
-    >
+    <Comp {...props} className={cn(linkVariants({ variant }))}>
       {children}
-    </a>
+    </Comp>
   );
 };
