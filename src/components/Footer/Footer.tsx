@@ -45,22 +45,18 @@ export function Footer() {
             </div>
             <div className="col-span-1 flex flex-col items-center gap-2 lg:col-span-4 lg:items-end">
               <div className="flex flex-col justify-end gap-2">
-                <form className="flex w-full flex-col items-center justify-end gap-2 lg:flex-row">
-                  <input
-                    type="text"
-                    placeholder="Ingresa tu correo y suscribete ..."
-                    className="flex w-full flex-1 rounded-lg border border-gray-500 bg-transparent p-2 text-gray-500 lg:max-w-[300px]"
-                  />
-                  <button
-                    type="submit"
-                    className="w-full rounded-lg bg-jsconf-yellow p-2 text-gray-800 transition-all duration-300 ease-in-out hover:bg-jsconf-red hover:text-white lg:w-36"
+                <div className="flex w-full flex-col items-center justify-end gap-2 lg:flex-row">
+                  <a
+                    target="_blank"
+                    href="https://auth.jschile.org"
+                    className="w-full rounded-lg bg-jsconf-yellow p-2 py-3 text-center text-gray-800 transition-all duration-300 ease-in-out hover:bg-jsconf-red hover:text-white lg:w-36"
                   >
                     Suscribirme
-                  </button>
-                </form>
+                  </a>
+                </div>
                 <p className="text-balance text-center text-sm text-gray-500 lg:text-right">
-                  Te haremos llegar información y actualizaciones de la
-                  conferencia.
+                  Te haremos llegar información y <br />
+                  actualizaciones de la conferencia.
                 </p>
               </div>
             </div>

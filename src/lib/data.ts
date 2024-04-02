@@ -111,17 +111,17 @@ export const footer = [
   {
     id: 1,
     name: "Código de conducta",
-    url: "https://github.com/jsconfcl/code_of_conduct",
+    url: "https://github.com/JSConfCL/code_of_conduct/blob/main/README.md",
   },
   {
     id: 2,
     name: "Términos y condiciones",
-    url: "#",
+    url: "https://github.com/JSConfCL/code_of_conduct/blob/main/terminos_de_servicio/README.md",
   },
   {
     id: 3,
     name: "Política de privacidad",
-    url: "#",
+    url: "https://github.com/JSConfCL/code_of_conduct/blob/main/politica_de_privacidad/README.md",
   },
 ];
 
