@@ -1,11 +1,12 @@
 /* eslint-disable tailwindcss/migration-from-tailwind-2 */
+import { ChevronLeft } from "lucide-react";
+
 import { Header } from "@/components/Header/Header";
 import { Mountain } from "@/components/Icons/Mountain";
+import { Link } from "@/components/Link";
 import { Particles } from "@/components/Particles";
 import { footer } from "@/lib/data";
 import { getMetaData, getViewports } from "@/lib/metadata";
-import { Link } from "@/components/Link";
-import { ChevronLeft } from "lucide-react";
 
 export const generateMetadata = () => getMetaData({});
 
@@ -43,10 +44,7 @@ export default function Home() {
                   La página que estás buscando no existe.
                 </p>
                 <div className="w-full md:w-48">
-                  <Link
-                    href="/"
-                    rel="noreferrer"
-                  >
+                  <Link href="/" rel="noreferrer">
                     <ChevronLeft size={16} /> Volver al inicio
                   </Link>
                 </div>
