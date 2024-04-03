@@ -35,11 +35,7 @@ export default function Home() {
           <div className="z-[1]">
             <Header />
             <div className="mx-auto flex h-[calc(100vh_-_120px)] w-[400px] max-w-[90%] flex-auto flex-col justify-center gap-8 text-left text-white md:w-[746px] lg:shrink-0 lg:basis-1/3">
-<<<<<<< Updated upstream
               <div className="flex flex-col items-center justify-center gap-6 rounded-xl bg-[#090907] bg-opacity-10 px-12 py-32 text-center backdrop-blur">
-=======
-              <div className="flex flex-col items-center justify-center gap-6 rounded-xl bg-[#090907] bg-opacity-30 px-12 py-32 text-center backdrop-blur">
->>>>>>> Stashed changes
                 <h1 className="text-center font-inconsolata text-9xl font-bold text-gray-200">
                   404
                 </h1>
@@ -48,18 +44,13 @@ export default function Home() {
                 </p>
                 <div className="w-full md:w-48">
                   <Link
-                    href="https://tally.so/r/mO5j9A"
-                    target="_blank"
+                    href="/"
                     rel="noreferrer"
                   >
                     <ChevronLeft size={16} /> Volver al inicio
                   </Link>
                 </div>
-<<<<<<< Updated upstream
-              </div> 
-=======
               </div>
->>>>>>> Stashed changes
             </div>
           </div>
         </div>
