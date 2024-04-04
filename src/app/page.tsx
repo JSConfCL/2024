@@ -95,23 +95,6 @@ export default function Home() {
           ))}
         </div>
       </main>
-      {/* <footer className="relative z-10 p-4 font-koulen text-white">
-        <div className="container mx-auto flex flex-col items-center justify-center gap-4 lg:flex-row">
-          <div className="flex flex-col gap-4 text-center lg:flex-row lg:gap-8">
-            {footer.map((link) => (
-              <a
-                key={link.url}
-                href={link.url}
-                target="_blank"
-                rel="noreferrer"
-                className="hover:text-jsconf-yellow"
-              >
-                {link.name}
-              </a>
-            ))}
-          </div>
-        </div>
-      </footer> */}
       <Footer />
     </>
   );
