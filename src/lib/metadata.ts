@@ -24,7 +24,23 @@ export const getMetaData = ({
     metadataBase: new URL(url),
     title,
     description,
-
+    icons: [
+      {
+        url: "/assets/favicon/favicon.ico",
+        type: "image/x-ico",
+      },
+      {
+        url: "/assets/favicon/favicon-16x16.png",
+        type: "image/png",
+        sizes: "16x16",
+      },
+      {
+        url: "/assets/favicon/favicon-32x32.png",
+        type: "image/png",
+        sizes: "32x32",
+      },
+    ],
+    // TODO: update keywords
     keywords: [
       "TechTon",
       "JSChile",
