@@ -3,8 +3,7 @@
 import React from "react";
 import NextLink from "next/link";
 import { cva, type VariantProps } from "class-variance-authority";
-
-import { cn } from "@/lib/utils";
+import { cn } from "@/lib";
 
 const linkVariants = cva(
   "relative mb-2 flex w-full items-center justify-center gap-3 rounded-md px-8 py-4 text-sm font-semibold",

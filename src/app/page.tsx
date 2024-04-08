@@ -1,10 +1,8 @@
 import { Card, Header, Link, Mountain, Particles, Title } from "@/components";
+import { cn, data, getMetaData, getViewports } from "@/lib";
 import { ChevronDown, ScrollText, Star } from "lucide-react";
 
 import { EventInfo } from "@/sections/EventInfo/EventInfo";
-import { data } from "@/lib/data";
-import { getMetaData, getViewports } from "@/lib/metadata";
-import { cn } from "@/lib/utils";
 
 export const generateMetadata = () => getMetaData({});
 

@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from "react";
 
-import { JSCONF } from "@/lib/data";
+import { JSCONF } from "@/lib";
 
 const SECOND = 1000;
 const MINUTE = SECOND * 60;
