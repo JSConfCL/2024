@@ -2,6 +2,7 @@ import { SvgType } from "@/common";
 
 export enum IllustrationCatalog {
   mountain = "mountain",
+  // TODO: add Title later on
 }
 
 export const IllustrationMapping: Record<IllustrationCatalog, SvgType> = {
