@@ -80,7 +80,7 @@ export const cfp = {
       description:
         "JSconf es un evento Open Source, sin fines de lucro, realizado por la comunidad y para la comunidad. Es por ello que si quieres ser parte y aportar con tus conocimientos, te invitamos a postular en nuestro CFP.",
       image: {
-        src: "/images/siete_tazas.jpg",
+        src: "/assets/images/siete_tazas.jpg",
         name: "Siete Tazas",
         place: "Región del Maule",
       },
@@ -91,7 +91,7 @@ export const cfp = {
     },
     {
       image: {
-        src: "/images/jsconf2023_matucana100.jpg",
+        src: "/assets/images/jsconf2023_matucana100.jpg",
         name: "JSConf 2023 - Teatro Matucana 100",
       },
       benefits: {

@@ -18,7 +18,7 @@ export const getMetaData = ({
   const description =
     _description ??
     `JSConf Chile: ${JSCONF.strDates} | Ya estamos trabajando en la nueva JSConf Chile. Mantente informado`;
-  const images = ["/images/og-image.jpg"];
+  const images = ["/assets/images/og-image.jpg"];
 
   return {
     metadataBase: new URL(url),
