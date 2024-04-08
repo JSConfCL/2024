@@ -2,10 +2,11 @@ import { SVGAttributes } from "react";
 
 import { cn } from "@/lib/utils";
 
+import { IconCatalog, IconMapping } from "./Catalogs/IconCatalog";
 import {
   IllustrationCatalog,
   IllustrationMapping,
-} from "./IllustrationCatalog";
+} from "./Catalogs/IllustrationCatalog";
 
 interface IconProps extends SVGAttributes<SVGSVGElement> {
   /**
@@ -14,20 +15,31 @@ interface IconProps extends SVGAttributes<SVGSVGElement> {
   className?: string;
 
   /**
-   * The logo to display.
+   * The SVG to display.
    */
-  illustration: IllustrationCatalog;
+  catalog: IconCatalog | IllustrationCatalog;
 }
 
-export const Icon = ({
-  className,
-  illustration = IllustrationCatalog.mountain,
-  ...rest
-}: IconProps) => {
+export const Svg = ({ className, catalog, ...rest }: IconProps) => {
   const classes = {
     container: cn("fill-current", className),
   };
-  const IllustrationDetails = IllustrationMapping[illustration];
+
+  let SvgDetails: {
+    paths: {
+      path: string;
+      options?: Array<{ attribute: string; value: string }>;
+    }[];
+    viewBox: string;
+  };
+
+  const combinedMapping = { ...IconMapping, ...IllustrationMapping };
+
+  if (catalog in combinedMapping) {
+    SvgDetails = combinedMapping[catalog];
+  } else {
+    throw new Error(`Unknown type of SVG: ${catalog}`);
+  }
 
   const convertOptionsToAttributes = (
     options?: Array<{ attribute: string; value: string }>,
@@ -45,7 +57,7 @@ export const Icon = ({
   };
 
   const renderPath = () =>
-    IllustrationDetails.paths.map((pathDetail, index) => (
+    SvgDetails.paths.map((pathDetail, index) => (
       <path
         key={index}
         d={pathDetail.path}
@@ -57,7 +69,7 @@ export const Icon = ({
     <svg
       className={classes.container}
       xmlns="http://www.w3.org/2000/svg"
-      viewBox={IllustrationDetails.viewBox}
+      viewBox={SvgDetails.viewBox}
       {...rest}
     >
       {renderPath()}
