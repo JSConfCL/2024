@@ -1,13 +1,7 @@
+import { Card, Header, Link, Mountain, Particles, Title } from "@/components";
 import { ChevronDown, ScrollText, Star } from "lucide-react";
 
 import { EventInfo } from "@/sections/EventInfo/EventInfo";
-import { Card } from "@/components/Card";
-import { Footer } from "@/components/Footer/Footer";
-import { Header } from "@/components/Header/Header";
-import { Mountain } from "@/components/Icons/Mountain";
-import { Title } from "@/components/Icons/Title";
-import { Link } from "@/components/Link";
-import { Particles } from "@/components/Particles";
 import { data } from "@/lib/data";
 import { getMetaData, getViewports } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
