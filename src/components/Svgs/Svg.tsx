@@ -2,11 +2,12 @@ import { SVGAttributes } from "react";
 
 import { cn } from "@/lib/utils";
 
-import { IconCatalog, IconMapping } from "./Catalogs/IconCatalog";
 import {
+  IconCatalog,
+  IconMapping,
   IllustrationCatalog,
   IllustrationMapping,
-} from "./Catalogs/IllustrationCatalog";
+} from "./index";
 
 interface IconProps extends SVGAttributes<SVGSVGElement> {
   /**
