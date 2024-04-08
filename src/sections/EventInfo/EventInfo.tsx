@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useEffect, useRef, useState } from "react";
-
 import { JSCONF } from "@/lib";
 
 const SECOND = 1000;

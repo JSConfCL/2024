@@ -1,7 +1,6 @@
 import Link from "next/link";
-import { HeaderLink , Logo } from "@/components";
-import { links , theme } from "@/lib";
-
+import { HeaderLink, Logo } from "@/components";
+import { links, theme } from "@/lib";
 
 export function Header() {
   return (
