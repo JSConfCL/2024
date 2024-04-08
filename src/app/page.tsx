@@ -4,10 +4,10 @@ import { EventInfo } from "@/sections/EventInfo/EventInfo";
 import { Card } from "@/components/Card";
 import { Footer } from "@/components/Footer/Footer";
 import { Header } from "@/components/Header/Header";
-import { Mountain } from "@/components/Icons/Mountain";
 import { Title } from "@/components/Icons/Title";
 import { Link } from "@/components/Link";
 import { Particles } from "@/components/Particles";
+import { IllustrationCatalog, Svg } from "@/components/Svgs";
 import { data } from "@/lib/data";
 import { getMetaData, getViewports } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
@@ -25,7 +25,7 @@ export default function Home() {
             <div className="flex h-screen w-full items-center justify-center">
               <div className="absolute">
                 <div className="relative -z-30 mx-auto w-[400px] max-w-[90%] animate-gradient-svg from-mountain-primary to-mountain-secondary blur-[1px] md:w-[746px] md:blur-sm lg:w-[900px] xl:w-[1200px]">
-                  <Mountain />
+                  <Svg catalog={IllustrationCatalog.mountain} />
                 </div>
                 <div className="absolute top-0 -z-20 mx-auto size-full max-w-[100%] bg-gradient-radial to-black to-95% md:w-[746px] lg:w-[900px] xl:w-[1200px]"></div>
                 <div
