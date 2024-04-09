@@ -1,19 +1,17 @@
+import { ExternalLink } from "lucide-react";
+
 import { HeaderLink } from "@/components/Header/HeaderLink";
 import { Logo } from "@/components/Icons/Logo";
 import { Title } from "@/components/Icons/Title";
+import { Link } from "@/components/Link";
 import { footer, links } from "@/lib/data";
 import { theme } from "@/lib/theme";
-import { ExternalLink } from "lucide-react";
-import { Link } from "@/components/Link";
 
 export function Footer() {
   return (
-    <footer className="relative z-10 font-barlow text-white">
-      <div className="pointer-events-none absolute inset-0 z-10 hidden w-[60%] bg-gradient-to-r from-transparent via-jsconf-yellow to-transparent opacity-10 md:inline-block"></div>
-      <div className="pointer-events-none absolute inset-0 z-10 w-[80%] bg-gradient-to-r from-jsconf-yellow via-jsconf-yellow to-transparent opacity-10 md:hidden"></div>
-      <div className="mx-6 flex flex-col py-14 lg:mx-auto lg:w-11/12 xl:w-8/12">
-        <div className="absolute top-0 w-full rounded-full bg-gradient-to-r from-transparent via-jsconf-yellow to-transparent p-[0.4px] lg:ml-[25%] lg:w-[550px]"></div>
-        <div className="flex w-full flex-col gap-8">
+    <footer className="relative z-10 font-barlow text-white before:absolute before:inset-0 before:z-10 before:w-[80%] before:bg-gradient-to-r before:from-jsconf-yellow before:via-jsconf-yellow before:to-transparent before:opacity-10 before:content-[''] before:md:w-[60%] before:md:from-transparent before:md:via-jsconf-yellow">
+      <div className="mx-6 flex flex-col before:top-0 before:h-0.5 before:w-full before:bg-gradient-to-r before:from-transparent before:from-10% before:via-jsconf-yellow before:via-50% before:to-transparent before:to-90% before:content-[''] lg:mx-auto lg:w-11/12 xl:w-8/12">
+        <div className="flex w-full flex-col gap-8 py-14">
           <div className="grid grid-cols-1 gap-6 px-6 lg:grid-cols-8 lg:gap-8 lg:px-0">
             <div className="col-span-1 flex flex-col items-center gap-4 lg:col-span-2 lg:items-start">
               <div className="flex">
@@ -48,7 +46,11 @@ export function Footer() {
             <div className="col-span-1 flex flex-col items-center gap-2 lg:col-span-4 lg:items-end">
               <div className="flex flex-col justify-end gap-2">
                 <div className="flex w-full flex-col items-center justify-end gap-2 lg:flex-row">
-                  <Link href={"https://auth.jschile.org"} target="_blank" rel="noreferrer">
+                  <Link
+                    href="https://auth.jschile.org"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     Suscribirme <ExternalLink />
                   </Link>
                 </div>
