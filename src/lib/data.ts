@@ -110,19 +110,18 @@ export const cfp = {
 export const footer = [
   {
     id: 1,
-    name: "Codigo de Conducta",
-    url: "https://github.com/jsconfcl/code_of_conduct",
+    name: "Código de conducta",
+    url: "https://github.com/JSConfCL/code_of_conduct/blob/main/README.md",
   },
-  { id: 2, name: "Contacto", url: "mailto:contacto@jsconf.cl" },
+  {
+    id: 2,
+    name: "Términos y condiciones",
+    url: "https://github.com/JSConfCL/code_of_conduct/blob/main/terminos_de_servicio/README.md",
+  },
   {
     id: 3,
-    name: "MIT Licencse  - JSConf Chile",
-    url: "https://github.com/JSConfCL/2024",
-  },
-  {
-    id: 4,
-    name: "Con ❤️ - El equipo JSConf Chile",
-    url: "https://github.com/jsconfcl",
+    name: "Política de privacidad",
+    url: "https://github.com/JSConfCL/code_of_conduct/blob/main/politica_de_privacidad/README.md",
   },
 ];
 
