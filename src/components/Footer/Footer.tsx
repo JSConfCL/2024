@@ -3,14 +3,16 @@ import { Logo } from "@/components/Icons/Logo";
 import { Title } from "@/components/Icons/Title";
 import { footer, links } from "@/lib/data";
 import { theme } from "@/lib/theme";
+import { ExternalLink } from "lucide-react";
+import { Link } from "@/components/Link";
 
 export function Footer() {
   return (
-    <footer className="relative z-10 text-white">
+    <footer className="relative z-10 font-barlow text-white">
       <div className="pointer-events-none absolute inset-0 z-10 hidden w-[60%] bg-gradient-to-r from-transparent via-jsconf-yellow to-transparent opacity-10 md:inline-block"></div>
       <div className="pointer-events-none absolute inset-0 z-10 w-[80%] bg-gradient-to-r from-jsconf-yellow via-jsconf-yellow to-transparent opacity-10 md:hidden"></div>
       <div className="mx-6 flex flex-col py-14 lg:mx-auto lg:w-11/12 xl:w-8/12">
-        <div className="absolute top-0 ml-[25%] w-full rounded-full bg-gradient-to-r from-transparent via-jsconf-yellow to-transparent p-[0.4px] lg:w-[550px]"></div>
+        <div className="absolute top-0 w-full rounded-full bg-gradient-to-r from-transparent via-jsconf-yellow to-transparent p-[0.4px] lg:ml-[25%] lg:w-[550px]"></div>
         <div className="flex w-full flex-col gap-8">
           <div className="grid grid-cols-1 gap-6 px-6 lg:grid-cols-8 lg:gap-8 lg:px-0">
             <div className="col-span-1 flex flex-col items-center gap-4 lg:col-span-2 lg:items-start">
@@ -46,13 +48,9 @@ export function Footer() {
             <div className="col-span-1 flex flex-col items-center gap-2 lg:col-span-4 lg:items-end">
               <div className="flex flex-col justify-end gap-2">
                 <div className="flex w-full flex-col items-center justify-end gap-2 lg:flex-row">
-                  <a
-                    target="_blank"
-                    href="https://auth.jschile.org"
-                    className="w-full rounded-lg bg-jsconf-yellow p-2 py-3 text-center text-gray-800 transition-all duration-300 ease-in-out hover:bg-jsconf-red hover:text-white lg:w-36"
-                  >
-                    Suscribirme
-                  </a>
+                  <Link href={"https://auth.jschile.org"} target="_blank" rel="noreferrer">
+                    Suscribirme <ExternalLink />
+                  </Link>
                 </div>
                 <p className="text-balance text-center text-sm text-gray-500 lg:text-right">
                   Te haremos llegar información y <br />
