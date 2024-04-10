@@ -1,11 +1,11 @@
 /* eslint-disable tailwindcss/migration-from-tailwind-2 */
 import { ChevronLeft } from "lucide-react";
 
+import { Footer } from "@/components/Footer/Footer";
 import { Header } from "@/components/Header/Header";
 import { Mountain } from "@/components/Icons/Mountain";
 import { Link } from "@/components/Link";
 import { Particles } from "@/components/Particles";
-import { Footer } from "@/components/Footer/Footer";
 import { getMetaData, getViewports } from "@/lib/metadata";
 
 export const generateMetadata = () => getMetaData({});
@@ -36,7 +36,7 @@ export default function Home() {
           <div className="z-[1]">
             <Header />
             <div className="mx-auto flex h-[calc(100vh_-_120px)] w-[400px] max-w-[90%] flex-auto flex-col justify-center gap-8 text-left text-white md:w-[746px] lg:shrink-0 lg:basis-1/3">
-              <div className="flex flex-col items-center justify-center gap-6 rounded-xl bg-[#090907] bg-opacity-10 px-12 py-32 text-center backdrop-blur">
+              <div className="card-border-gradient flex flex-col items-center justify-center gap-6 rounded-xl bg-[#090907] bg-opacity-10 px-12 py-32 text-center backdrop-blur">
                 <h1 className="text-center font-inconsolata text-9xl font-bold text-gray-200">
                   404
                 </h1>
