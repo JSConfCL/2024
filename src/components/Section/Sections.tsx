@@ -6,11 +6,17 @@ interface SectionProps extends React.HTMLProps<HTMLDivElement> {
 }
 
 function validateNumberCols(cols: number) {
-  return (cols === undefined || cols < 1) ? 1 : cols;
+  return cols === undefined || cols < 1 ? 1 : cols;
 }
 
-export const Section: React.FC<SectionProps> = ({ children, colsSm, colsMd, colsLg, gap, ...props }) => {
-
+export const Section: React.FC<SectionProps> = ({
+  children,
+  colsSm,
+  colsMd,
+  colsLg,
+  gap,
+  ...props
+}) => {
   colsSm = validateNumberCols(colsSm);
   colsMd = validateNumberCols(colsMd);
   colsLg = validateNumberCols(colsLg);
