@@ -38,3 +38,6 @@ next-env.d.ts
 # eslint
 .eslintcache
 .env
+
+.sanity
+dist
