@@ -1,0 +1,4 @@
+# # GQL / code-generation
+src/api/**/*
+src/**/*.generated.*
+app/**/*.gener

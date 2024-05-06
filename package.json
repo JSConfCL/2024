@@ -6,6 +6,9 @@
     "dev": "next dev --turbo",
     "build": "next build",
     "start": "next start",
+    "generate": "graphql-codegen",
+    "prestart": "npm run generate",
+    "predev": "npm run generate",
     "typecheck": "tsc",
     "lint": "eslint ./src --cache",
     "lint:fix": "eslint ./src --cache --fix",
@@ -23,9 +26,11 @@
     "@tsparticles/react": "^3.0.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "graphql": "^16.8.1",
+    "graphql-request": "^6.1.0",
     "lucide-react": "^0.335.0",
     "next": "14.1.0",
-    "next-sanity": "^9.0.13",
+    "next-sanity": "^9.0.14",
     "next-sanity-image": "^6.1.1",
     "posthog-js": "^1.116.6",
     "react": "^18",
@@ -38,6 +43,11 @@
   "devDependencies": {
     "@commitlint/cli": "^18.6.1",
     "@commitlint/config-conventional": "^18.6.2",
+    "@graphql-codegen/cli": "5.0.2",
+    "@graphql-codegen/client-preset": "^4.2.5",
+    "@graphql-codegen/typescript": "^4.0.6",
+    "@graphql-codegen/typescript-graphql-request": "^6.2.0",
+    "@graphql-codegen/typescript-operations": "^4.2.0",
     "@ianvs/prettier-plugin-sort-imports": "^4.1.1",
     "@next/eslint-plugin-next": "^14.1.0",
     "@posthog/plugin-scaffold": "^1.6.0",
@@ -61,7 +71,7 @@
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
     "tailwindcss": "^3.3.0",
-    "typescript": "^5"
+    "typescript": "^5.4.5"
   },
   "lint-staged": {
     "src/*.{js,jsx,ts,tsx}": "eslint --cache --fix",
