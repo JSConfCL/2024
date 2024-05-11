@@ -21,6 +21,7 @@ export type Scalars = {
   Float: { input: number; output: number; }
   Date: { input: unknown; output: unknown; }
   DateTime: { input: unknown; output: unknown; }
+  JSON: { input: unknown; output: unknown; }
 };
 
 export type Block = {
@@ -40,6 +41,85 @@ export type BooleanFilter = {
   is_defined: InputMaybe<Scalars['Boolean']['input']>;
   /** Checks if the value is not equal to the given input. */
   neq: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type Card = {
+  __typename?: 'Card';
+  _key: Maybe<Scalars['String']['output']>;
+  _type: Maybe<Scalars['String']['output']>;
+  description: Maybe<RichText>;
+  icon: Maybe<Scalars['String']['output']>;
+  image: Maybe<Image>;
+  showType: Maybe<Scalars['String']['output']>;
+  title: Maybe<Scalars['String']['output']>;
+};
+
+export type CardFilter = {
+  _key: InputMaybe<StringFilter>;
+  _type: InputMaybe<StringFilter>;
+  description: InputMaybe<RichTextFilter>;
+  icon: InputMaybe<StringFilter>;
+  image: InputMaybe<ImageFilter>;
+  showType: InputMaybe<StringFilter>;
+  title: InputMaybe<StringFilter>;
+};
+
+export type CardOrCustomInfoOrHeroOrRichTextOrRow = Card | CustomInfo | Hero | RichText | Row;
+
+export type CardOrImageOrRichText = Card | Image | RichText;
+
+export type CardSorting = {
+  _key: InputMaybe<SortOrder>;
+  _type: InputMaybe<SortOrder>;
+  description: InputMaybe<RichTextSorting>;
+  icon: InputMaybe<SortOrder>;
+  image: InputMaybe<ImageSorting>;
+  showType: InputMaybe<SortOrder>;
+  title: InputMaybe<SortOrder>;
+};
+
+export type Community = Document & {
+  __typename?: 'Community';
+  /** Date the document was created */
+  _createdAt: Maybe<Scalars['DateTime']['output']>;
+  /** Document ID */
+  _id: Maybe<Scalars['ID']['output']>;
+  _key: Maybe<Scalars['String']['output']>;
+  /** Current document revision */
+  _rev: Maybe<Scalars['String']['output']>;
+  /** Document type */
+  _type: Maybe<Scalars['String']['output']>;
+  /** Date the document was last modified */
+  _updatedAt: Maybe<Scalars['DateTime']['output']>;
+  logo: Maybe<Image>;
+  name: Maybe<Scalars['String']['output']>;
+  webpage: Maybe<Scalars['String']['output']>;
+};
+
+export type CommunityFilter = {
+  /** Apply filters on document level */
+  _: InputMaybe<Sanity_DocumentFilter>;
+  _createdAt: InputMaybe<DatetimeFilter>;
+  _id: InputMaybe<IdFilter>;
+  _key: InputMaybe<StringFilter>;
+  _rev: InputMaybe<StringFilter>;
+  _type: InputMaybe<StringFilter>;
+  _updatedAt: InputMaybe<DatetimeFilter>;
+  logo: InputMaybe<ImageFilter>;
+  name: InputMaybe<StringFilter>;
+  webpage: InputMaybe<StringFilter>;
+};
+
+export type CommunitySorting = {
+  _createdAt: InputMaybe<SortOrder>;
+  _id: InputMaybe<SortOrder>;
+  _key: InputMaybe<SortOrder>;
+  _rev: InputMaybe<SortOrder>;
+  _type: InputMaybe<SortOrder>;
+  _updatedAt: InputMaybe<SortOrder>;
+  logo: InputMaybe<ImageSorting>;
+  name: InputMaybe<SortOrder>;
+  webpage: InputMaybe<SortOrder>;
 };
 
 export type CrossDatasetReference = {
@@ -68,6 +148,58 @@ export type CrossDatasetReferenceSorting = {
   _ref: InputMaybe<SortOrder>;
   _type: InputMaybe<SortOrder>;
   _weak: InputMaybe<SortOrder>;
+};
+
+export type CustomAttributes = {
+  __typename?: 'CustomAttributes';
+  _key: Maybe<Scalars['String']['output']>;
+  _type: Maybe<Scalars['String']['output']>;
+  name: Maybe<Scalars['String']['output']>;
+  value: Maybe<Scalars['String']['output']>;
+};
+
+export type CustomAttributesFilter = {
+  _key: InputMaybe<StringFilter>;
+  _type: InputMaybe<StringFilter>;
+  name: InputMaybe<StringFilter>;
+  value: InputMaybe<StringFilter>;
+};
+
+export type CustomAttributesSorting = {
+  _key: InputMaybe<SortOrder>;
+  _type: InputMaybe<SortOrder>;
+  name: InputMaybe<SortOrder>;
+  value: InputMaybe<SortOrder>;
+};
+
+export type CustomInfo = {
+  __typename?: 'CustomInfo';
+  _key: Maybe<Scalars['String']['output']>;
+  _type: Maybe<Scalars['String']['output']>;
+  actions: Maybe<Array<Maybe<Link>>>;
+  attributes: Maybe<Array<Maybe<CustomAttributes>>>;
+  description: Maybe<RichText>;
+  name: Maybe<Scalars['String']['output']>;
+  slug: Maybe<Scalars['String']['output']>;
+  title: Maybe<Scalars['String']['output']>;
+};
+
+export type CustomInfoFilter = {
+  _key: InputMaybe<StringFilter>;
+  _type: InputMaybe<StringFilter>;
+  description: InputMaybe<RichTextFilter>;
+  name: InputMaybe<StringFilter>;
+  slug: InputMaybe<StringFilter>;
+  title: InputMaybe<StringFilter>;
+};
+
+export type CustomInfoSorting = {
+  _key: InputMaybe<SortOrder>;
+  _type: InputMaybe<SortOrder>;
+  description: InputMaybe<RichTextSorting>;
+  name: InputMaybe<SortOrder>;
+  slug: InputMaybe<SortOrder>;
+  title: InputMaybe<SortOrder>;
 };
 
 export type DateFilter = {
@@ -171,6 +303,46 @@ export type FloatFilter = {
   neq: InputMaybe<Scalars['Float']['input']>;
 };
 
+export type Footer = Document & {
+  __typename?: 'Footer';
+  /** Date the document was created */
+  _createdAt: Maybe<Scalars['DateTime']['output']>;
+  /** Document ID */
+  _id: Maybe<Scalars['ID']['output']>;
+  _key: Maybe<Scalars['String']['output']>;
+  /** Current document revision */
+  _rev: Maybe<Scalars['String']['output']>;
+  /** Document type */
+  _type: Maybe<Scalars['String']['output']>;
+  /** Date the document was last modified */
+  _updatedAt: Maybe<Scalars['DateTime']['output']>;
+  followLinks: Maybe<Array<Maybe<Link>>>;
+  name: Maybe<Scalars['String']['output']>;
+  sectionLinks: Maybe<Array<Maybe<Link>>>;
+};
+
+export type FooterFilter = {
+  /** Apply filters on document level */
+  _: InputMaybe<Sanity_DocumentFilter>;
+  _createdAt: InputMaybe<DatetimeFilter>;
+  _id: InputMaybe<IdFilter>;
+  _key: InputMaybe<StringFilter>;
+  _rev: InputMaybe<StringFilter>;
+  _type: InputMaybe<StringFilter>;
+  _updatedAt: InputMaybe<DatetimeFilter>;
+  name: InputMaybe<StringFilter>;
+};
+
+export type FooterSorting = {
+  _createdAt: InputMaybe<SortOrder>;
+  _id: InputMaybe<SortOrder>;
+  _key: InputMaybe<SortOrder>;
+  _rev: InputMaybe<SortOrder>;
+  _type: InputMaybe<SortOrder>;
+  _updatedAt: InputMaybe<SortOrder>;
+  name: InputMaybe<SortOrder>;
+};
+
 export type Geopoint = {
   __typename?: 'Geopoint';
   _key: Maybe<Scalars['String']['output']>;
@@ -194,6 +366,36 @@ export type GeopointSorting = {
   alt: InputMaybe<SortOrder>;
   lat: InputMaybe<SortOrder>;
   lng: InputMaybe<SortOrder>;
+};
+
+export type Hero = {
+  __typename?: 'Hero';
+  _key: Maybe<Scalars['String']['output']>;
+  _type: Maybe<Scalars['String']['output']>;
+  actions: Maybe<Array<Maybe<Link>>>;
+  customAttributes: Maybe<Array<Maybe<CustomAttributes>>>;
+  heading: Maybe<Scalars['String']['output']>;
+  icon: Maybe<Scalars['String']['output']>;
+  image: Maybe<Image>;
+  tagline: Maybe<Scalars['String']['output']>;
+};
+
+export type HeroFilter = {
+  _key: InputMaybe<StringFilter>;
+  _type: InputMaybe<StringFilter>;
+  heading: InputMaybe<StringFilter>;
+  icon: InputMaybe<StringFilter>;
+  image: InputMaybe<ImageFilter>;
+  tagline: InputMaybe<StringFilter>;
+};
+
+export type HeroSorting = {
+  _key: InputMaybe<SortOrder>;
+  _type: InputMaybe<SortOrder>;
+  heading: InputMaybe<SortOrder>;
+  icon: InputMaybe<SortOrder>;
+  image: InputMaybe<ImageSorting>;
+  tagline: InputMaybe<SortOrder>;
 };
 
 export type IdFilter = {
@@ -248,8 +450,8 @@ export type IntFilter = {
   neq: InputMaybe<Scalars['Int']['input']>;
 };
 
-export type Navs = Document & {
-  __typename?: 'Navs';
+export type Link = Document & {
+  __typename?: 'Link';
   /** Date the document was created */
   _createdAt: Maybe<Scalars['DateTime']['output']>;
   /** Document ID */
@@ -261,10 +463,14 @@ export type Navs = Document & {
   _type: Maybe<Scalars['String']['output']>;
   /** Date the document was last modified */
   _updatedAt: Maybe<Scalars['DateTime']['output']>;
-  title: Maybe<Scalars['String']['output']>;
+  icon: Maybe<Scalars['String']['output']>;
+  style: Maybe<Scalars['String']['output']>;
+  target: Maybe<Scalars['String']['output']>;
+  text: Maybe<Scalars['String']['output']>;
+  url: Maybe<Scalars['String']['output']>;
 };
 
-export type NavsFilter = {
+export type LinkFilter = {
   /** Apply filters on document level */
   _: InputMaybe<Sanity_DocumentFilter>;
   _createdAt: InputMaybe<DatetimeFilter>;
@@ -273,29 +479,235 @@ export type NavsFilter = {
   _rev: InputMaybe<StringFilter>;
   _type: InputMaybe<StringFilter>;
   _updatedAt: InputMaybe<DatetimeFilter>;
-  title: InputMaybe<StringFilter>;
+  icon: InputMaybe<StringFilter>;
+  style: InputMaybe<StringFilter>;
+  target: InputMaybe<StringFilter>;
+  text: InputMaybe<StringFilter>;
+  url: InputMaybe<StringFilter>;
 };
 
-export type NavsSorting = {
+export type LinkSorting = {
   _createdAt: InputMaybe<SortOrder>;
   _id: InputMaybe<SortOrder>;
   _key: InputMaybe<SortOrder>;
   _rev: InputMaybe<SortOrder>;
   _type: InputMaybe<SortOrder>;
   _updatedAt: InputMaybe<SortOrder>;
-  title: InputMaybe<SortOrder>;
+  icon: InputMaybe<SortOrder>;
+  style: InputMaybe<SortOrder>;
+  target: InputMaybe<SortOrder>;
+  text: InputMaybe<SortOrder>;
+  url: InputMaybe<SortOrder>;
+};
+
+export type Member = Document & {
+  __typename?: 'Member';
+  /** Date the document was created */
+  _createdAt: Maybe<Scalars['DateTime']['output']>;
+  /** Document ID */
+  _id: Maybe<Scalars['ID']['output']>;
+  _key: Maybe<Scalars['String']['output']>;
+  /** Current document revision */
+  _rev: Maybe<Scalars['String']['output']>;
+  /** Document type */
+  _type: Maybe<Scalars['String']['output']>;
+  /** Date the document was last modified */
+  _updatedAt: Maybe<Scalars['DateTime']['output']>;
+  name: Maybe<Scalars['String']['output']>;
+  photo: Maybe<Image>;
+  slug: Maybe<Scalars['String']['output']>;
+  type: Maybe<Scalars['String']['output']>;
+  webpage: Maybe<Scalars['String']['output']>;
+};
+
+export type MemberFilter = {
+  /** Apply filters on document level */
+  _: InputMaybe<Sanity_DocumentFilter>;
+  _createdAt: InputMaybe<DatetimeFilter>;
+  _id: InputMaybe<IdFilter>;
+  _key: InputMaybe<StringFilter>;
+  _rev: InputMaybe<StringFilter>;
+  _type: InputMaybe<StringFilter>;
+  _updatedAt: InputMaybe<DatetimeFilter>;
+  name: InputMaybe<StringFilter>;
+  photo: InputMaybe<ImageFilter>;
+  slug: InputMaybe<StringFilter>;
+  type: InputMaybe<StringFilter>;
+  webpage: InputMaybe<StringFilter>;
+};
+
+export type MemberSorting = {
+  _createdAt: InputMaybe<SortOrder>;
+  _id: InputMaybe<SortOrder>;
+  _key: InputMaybe<SortOrder>;
+  _rev: InputMaybe<SortOrder>;
+  _type: InputMaybe<SortOrder>;
+  _updatedAt: InputMaybe<SortOrder>;
+  name: InputMaybe<SortOrder>;
+  photo: InputMaybe<ImageSorting>;
+  slug: InputMaybe<SortOrder>;
+  type: InputMaybe<SortOrder>;
+  webpage: InputMaybe<SortOrder>;
+};
+
+export type Navbar = Document & {
+  __typename?: 'Navbar';
+  /** Date the document was created */
+  _createdAt: Maybe<Scalars['DateTime']['output']>;
+  /** Document ID */
+  _id: Maybe<Scalars['ID']['output']>;
+  _key: Maybe<Scalars['String']['output']>;
+  /** Current document revision */
+  _rev: Maybe<Scalars['String']['output']>;
+  /** Document type */
+  _type: Maybe<Scalars['String']['output']>;
+  /** Date the document was last modified */
+  _updatedAt: Maybe<Scalars['DateTime']['output']>;
+  links: Maybe<Array<Maybe<Link>>>;
+  name: Maybe<Scalars['String']['output']>;
+};
+
+export type NavbarFilter = {
+  /** Apply filters on document level */
+  _: InputMaybe<Sanity_DocumentFilter>;
+  _createdAt: InputMaybe<DatetimeFilter>;
+  _id: InputMaybe<IdFilter>;
+  _key: InputMaybe<StringFilter>;
+  _rev: InputMaybe<StringFilter>;
+  _type: InputMaybe<StringFilter>;
+  _updatedAt: InputMaybe<DatetimeFilter>;
+  name: InputMaybe<StringFilter>;
+};
+
+export type NavbarSorting = {
+  _createdAt: InputMaybe<SortOrder>;
+  _id: InputMaybe<SortOrder>;
+  _key: InputMaybe<SortOrder>;
+  _rev: InputMaybe<SortOrder>;
+  _type: InputMaybe<SortOrder>;
+  _updatedAt: InputMaybe<SortOrder>;
+  name: InputMaybe<SortOrder>;
+};
+
+export type Page = Document & {
+  __typename?: 'Page';
+  /** Date the document was created */
+  _createdAt: Maybe<Scalars['DateTime']['output']>;
+  /** Document ID */
+  _id: Maybe<Scalars['ID']['output']>;
+  _key: Maybe<Scalars['String']['output']>;
+  /** Current document revision */
+  _rev: Maybe<Scalars['String']['output']>;
+  /** Document type */
+  _type: Maybe<Scalars['String']['output']>;
+  /** Date the document was last modified */
+  _updatedAt: Maybe<Scalars['DateTime']['output']>;
+  /** If true, page will be genearated automatically using the slug. In any other case, this slug should be used as refrerence in a specific page. */
+  dynamicPage: Maybe<Scalars['Boolean']['output']>;
+  footer: Maybe<Footer>;
+  name: Maybe<Scalars['String']['output']>;
+  navbar: Maybe<Navbar>;
+  sections: Maybe<Array<Maybe<CardOrCustomInfoOrHeroOrRichTextOrRow>>>;
+  seoDescription: Maybe<Scalars['String']['output']>;
+  seoImage: Maybe<Image>;
+  seoKeywords: Maybe<Scalars['String']['output']>;
+  seoTitle: Maybe<Scalars['String']['output']>;
+  slug: Maybe<Slug>;
+};
+
+export type PageFilter = {
+  /** Apply filters on document level */
+  _: InputMaybe<Sanity_DocumentFilter>;
+  _createdAt: InputMaybe<DatetimeFilter>;
+  _id: InputMaybe<IdFilter>;
+  _key: InputMaybe<StringFilter>;
+  _rev: InputMaybe<StringFilter>;
+  _type: InputMaybe<StringFilter>;
+  _updatedAt: InputMaybe<DatetimeFilter>;
+  dynamicPage: InputMaybe<BooleanFilter>;
+  footer: InputMaybe<FooterFilter>;
+  name: InputMaybe<StringFilter>;
+  navbar: InputMaybe<NavbarFilter>;
+  seoDescription: InputMaybe<StringFilter>;
+  seoImage: InputMaybe<ImageFilter>;
+  seoKeywords: InputMaybe<StringFilter>;
+  seoTitle: InputMaybe<StringFilter>;
+  slug: InputMaybe<SlugFilter>;
+};
+
+export type PageSorting = {
+  _createdAt: InputMaybe<SortOrder>;
+  _id: InputMaybe<SortOrder>;
+  _key: InputMaybe<SortOrder>;
+  _rev: InputMaybe<SortOrder>;
+  _type: InputMaybe<SortOrder>;
+  _updatedAt: InputMaybe<SortOrder>;
+  dynamicPage: InputMaybe<SortOrder>;
+  name: InputMaybe<SortOrder>;
+  seoDescription: InputMaybe<SortOrder>;
+  seoImage: InputMaybe<ImageSorting>;
+  seoKeywords: InputMaybe<SortOrder>;
+  seoTitle: InputMaybe<SortOrder>;
+  slug: InputMaybe<SlugSorting>;
+};
+
+export type RichText = {
+  __typename?: 'RichText';
+  _key: Maybe<Scalars['String']['output']>;
+  _type: Maybe<Scalars['String']['output']>;
+  htmlTextRaw: Maybe<Scalars['JSON']['output']>;
+  markdownText: Maybe<Scalars['String']['output']>;
+  name: Maybe<Scalars['String']['output']>;
+  textType: Maybe<Scalars['String']['output']>;
+};
+
+export type RichTextFilter = {
+  _key: InputMaybe<StringFilter>;
+  _type: InputMaybe<StringFilter>;
+  markdownText: InputMaybe<StringFilter>;
+  name: InputMaybe<StringFilter>;
+  textType: InputMaybe<StringFilter>;
+};
+
+export type RichTextSorting = {
+  _key: InputMaybe<SortOrder>;
+  _type: InputMaybe<SortOrder>;
+  markdownText: InputMaybe<SortOrder>;
+  name: InputMaybe<SortOrder>;
+  textType: InputMaybe<SortOrder>;
 };
 
 export type RootQuery = {
   __typename?: 'RootQuery';
+  Community: Maybe<Community>;
   Document: Maybe<Document>;
-  Navs: Maybe<Navs>;
+  Footer: Maybe<Footer>;
+  Link: Maybe<Link>;
+  Member: Maybe<Member>;
+  Navbar: Maybe<Navbar>;
+  Page: Maybe<Page>;
   SanityFileAsset: Maybe<SanityFileAsset>;
   SanityImageAsset: Maybe<SanityImageAsset>;
+  Speaker: Maybe<Speaker>;
+  Sponsor: Maybe<Sponsor>;
+  SponsorType: Maybe<SponsorType>;
+  allCommunity: Array<Community>;
   allDocument: Array<Document>;
-  allNavs: Array<Navs>;
+  allFooter: Array<Footer>;
+  allLink: Array<Link>;
+  allMember: Array<Member>;
+  allNavbar: Array<Navbar>;
+  allPage: Array<Page>;
   allSanityFileAsset: Array<SanityFileAsset>;
   allSanityImageAsset: Array<SanityImageAsset>;
+  allSpeaker: Array<Speaker>;
+  allSponsor: Array<Sponsor>;
+  allSponsorType: Array<SponsorType>;
+};
+
+
+export type RootQueryCommunityArgs = {
+  id: Scalars['ID']['input'];
 };
 
 
@@ -304,7 +716,27 @@ export type RootQueryDocumentArgs = {
 };
 
 
-export type RootQueryNavsArgs = {
+export type RootQueryFooterArgs = {
+  id: Scalars['ID']['input'];
+};
+
+
+export type RootQueryLinkArgs = {
+  id: Scalars['ID']['input'];
+};
+
+
+export type RootQueryMemberArgs = {
+  id: Scalars['ID']['input'];
+};
+
+
+export type RootQueryNavbarArgs = {
+  id: Scalars['ID']['input'];
+};
+
+
+export type RootQueryPageArgs = {
   id: Scalars['ID']['input'];
 };
 
@@ -319,6 +751,29 @@ export type RootQuerySanityImageAssetArgs = {
 };
 
 
+export type RootQuerySpeakerArgs = {
+  id: Scalars['ID']['input'];
+};
+
+
+export type RootQuerySponsorArgs = {
+  id: Scalars['ID']['input'];
+};
+
+
+export type RootQuerySponsorTypeArgs = {
+  id: Scalars['ID']['input'];
+};
+
+
+export type RootQueryAllCommunityArgs = {
+  limit: InputMaybe<Scalars['Int']['input']>;
+  offset: InputMaybe<Scalars['Int']['input']>;
+  sort: InputMaybe<Array<CommunitySorting>>;
+  where: InputMaybe<CommunityFilter>;
+};
+
+
 export type RootQueryAllDocumentArgs = {
   limit: InputMaybe<Scalars['Int']['input']>;
   offset: InputMaybe<Scalars['Int']['input']>;
@@ -327,11 +782,43 @@ export type RootQueryAllDocumentArgs = {
 };
 
 
-export type RootQueryAllNavsArgs = {
+export type RootQueryAllFooterArgs = {
   limit: InputMaybe<Scalars['Int']['input']>;
   offset: InputMaybe<Scalars['Int']['input']>;
-  sort: InputMaybe<Array<NavsSorting>>;
-  where: InputMaybe<NavsFilter>;
+  sort: InputMaybe<Array<FooterSorting>>;
+  where: InputMaybe<FooterFilter>;
+};
+
+
+export type RootQueryAllLinkArgs = {
+  limit: InputMaybe<Scalars['Int']['input']>;
+  offset: InputMaybe<Scalars['Int']['input']>;
+  sort: InputMaybe<Array<LinkSorting>>;
+  where: InputMaybe<LinkFilter>;
+};
+
+
+export type RootQueryAllMemberArgs = {
+  limit: InputMaybe<Scalars['Int']['input']>;
+  offset: InputMaybe<Scalars['Int']['input']>;
+  sort: InputMaybe<Array<MemberSorting>>;
+  where: InputMaybe<MemberFilter>;
+};
+
+
+export type RootQueryAllNavbarArgs = {
+  limit: InputMaybe<Scalars['Int']['input']>;
+  offset: InputMaybe<Scalars['Int']['input']>;
+  sort: InputMaybe<Array<NavbarSorting>>;
+  where: InputMaybe<NavbarFilter>;
+};
+
+
+export type RootQueryAllPageArgs = {
+  limit: InputMaybe<Scalars['Int']['input']>;
+  offset: InputMaybe<Scalars['Int']['input']>;
+  sort: InputMaybe<Array<PageSorting>>;
+  where: InputMaybe<PageFilter>;
 };
 
 
@@ -348,6 +835,59 @@ export type RootQueryAllSanityImageAssetArgs = {
   offset: InputMaybe<Scalars['Int']['input']>;
   sort: InputMaybe<Array<SanityImageAssetSorting>>;
   where: InputMaybe<SanityImageAssetFilter>;
+};
+
+
+export type RootQueryAllSpeakerArgs = {
+  limit: InputMaybe<Scalars['Int']['input']>;
+  offset: InputMaybe<Scalars['Int']['input']>;
+  sort: InputMaybe<Array<SpeakerSorting>>;
+  where: InputMaybe<SpeakerFilter>;
+};
+
+
+export type RootQueryAllSponsorArgs = {
+  limit: InputMaybe<Scalars['Int']['input']>;
+  offset: InputMaybe<Scalars['Int']['input']>;
+  sort: InputMaybe<Array<SponsorSorting>>;
+  where: InputMaybe<SponsorFilter>;
+};
+
+
+export type RootQueryAllSponsorTypeArgs = {
+  limit: InputMaybe<Scalars['Int']['input']>;
+  offset: InputMaybe<Scalars['Int']['input']>;
+  sort: InputMaybe<Array<SponsorTypeSorting>>;
+  where: InputMaybe<SponsorTypeFilter>;
+};
+
+export type Row = {
+  __typename?: 'Row';
+  _key: Maybe<Scalars['String']['output']>;
+  _type: Maybe<Scalars['String']['output']>;
+  children: Maybe<Array<Maybe<CardOrImageOrRichText>>>;
+  description: Maybe<RichText>;
+  icon: Maybe<Scalars['String']['output']>;
+  rowType: Maybe<Scalars['String']['output']>;
+  title: Maybe<Scalars['String']['output']>;
+};
+
+export type RowFilter = {
+  _key: InputMaybe<StringFilter>;
+  _type: InputMaybe<StringFilter>;
+  description: InputMaybe<RichTextFilter>;
+  icon: InputMaybe<StringFilter>;
+  rowType: InputMaybe<StringFilter>;
+  title: InputMaybe<StringFilter>;
+};
+
+export type RowSorting = {
+  _key: InputMaybe<SortOrder>;
+  _type: InputMaybe<SortOrder>;
+  description: InputMaybe<RichTextSorting>;
+  icon: InputMaybe<SortOrder>;
+  rowType: InputMaybe<SortOrder>;
+  title: InputMaybe<SortOrder>;
 };
 
 export type SanityAssetSourceData = {
@@ -762,6 +1302,211 @@ export type Span = {
   text: Maybe<Scalars['String']['output']>;
 };
 
+export type Speaker = Document & {
+  __typename?: 'Speaker';
+  /** Date the document was created */
+  _createdAt: Maybe<Scalars['DateTime']['output']>;
+  /** Document ID */
+  _id: Maybe<Scalars['ID']['output']>;
+  _key: Maybe<Scalars['String']['output']>;
+  /** Current document revision */
+  _rev: Maybe<Scalars['String']['output']>;
+  /** Document type */
+  _type: Maybe<Scalars['String']['output']>;
+  /** Date the document was last modified */
+  _updatedAt: Maybe<Scalars['DateTime']['output']>;
+  company: Maybe<Scalars['String']['output']>;
+  description: Maybe<RichText>;
+  instagram: Maybe<Scalars['String']['output']>;
+  isKeynoter: Maybe<Scalars['Boolean']['output']>;
+  linkedin: Maybe<Scalars['String']['output']>;
+  longName: Maybe<Scalars['String']['output']>;
+  photos: Maybe<Array<Maybe<Image>>>;
+  profilePicture: Maybe<Image>;
+  showName: Maybe<Scalars['String']['output']>;
+  slug: Maybe<Scalars['String']['output']>;
+  title: Maybe<Scalars['String']['output']>;
+  twitter: Maybe<Scalars['String']['output']>;
+  webpage: Maybe<Scalars['String']['output']>;
+};
+
+export type SpeakerFilter = {
+  /** Apply filters on document level */
+  _: InputMaybe<Sanity_DocumentFilter>;
+  _createdAt: InputMaybe<DatetimeFilter>;
+  _id: InputMaybe<IdFilter>;
+  _key: InputMaybe<StringFilter>;
+  _rev: InputMaybe<StringFilter>;
+  _type: InputMaybe<StringFilter>;
+  _updatedAt: InputMaybe<DatetimeFilter>;
+  company: InputMaybe<StringFilter>;
+  description: InputMaybe<RichTextFilter>;
+  instagram: InputMaybe<StringFilter>;
+  isKeynoter: InputMaybe<BooleanFilter>;
+  linkedin: InputMaybe<StringFilter>;
+  longName: InputMaybe<StringFilter>;
+  profilePicture: InputMaybe<ImageFilter>;
+  showName: InputMaybe<StringFilter>;
+  slug: InputMaybe<StringFilter>;
+  title: InputMaybe<StringFilter>;
+  twitter: InputMaybe<StringFilter>;
+  webpage: InputMaybe<StringFilter>;
+};
+
+export type SpeakerSorting = {
+  _createdAt: InputMaybe<SortOrder>;
+  _id: InputMaybe<SortOrder>;
+  _key: InputMaybe<SortOrder>;
+  _rev: InputMaybe<SortOrder>;
+  _type: InputMaybe<SortOrder>;
+  _updatedAt: InputMaybe<SortOrder>;
+  company: InputMaybe<SortOrder>;
+  description: InputMaybe<RichTextSorting>;
+  instagram: InputMaybe<SortOrder>;
+  isKeynoter: InputMaybe<SortOrder>;
+  linkedin: InputMaybe<SortOrder>;
+  longName: InputMaybe<SortOrder>;
+  profilePicture: InputMaybe<ImageSorting>;
+  showName: InputMaybe<SortOrder>;
+  slug: InputMaybe<SortOrder>;
+  title: InputMaybe<SortOrder>;
+  twitter: InputMaybe<SortOrder>;
+  webpage: InputMaybe<SortOrder>;
+};
+
+export type Sponsor = Document & {
+  __typename?: 'Sponsor';
+  /** Date the document was created */
+  _createdAt: Maybe<Scalars['DateTime']['output']>;
+  /** Document ID */
+  _id: Maybe<Scalars['ID']['output']>;
+  _key: Maybe<Scalars['String']['output']>;
+  /** Current document revision */
+  _rev: Maybe<Scalars['String']['output']>;
+  /** Document type */
+  _type: Maybe<Scalars['String']['output']>;
+  /** Date the document was last modified */
+  _updatedAt: Maybe<Scalars['DateTime']['output']>;
+  de: Maybe<Scalars['String']['output']>;
+  description: Maybe<RichText>;
+  image: Maybe<Image>;
+  instagram: Maybe<Scalars['String']['output']>;
+  linkedin: Maybe<Scalars['String']['output']>;
+  logo: Maybe<Image>;
+  name: Maybe<Scalars['String']['output']>;
+  seoDescription: Maybe<Scalars['String']['output']>;
+  seoImage: Maybe<Image>;
+  seoKeywords: Maybe<Scalars['String']['output']>;
+  seoTitle: Maybe<Scalars['String']['output']>;
+  /** We offer custom pages USUALLY for "platinum", "gold" and some "silver" sponsors. Validate if this sponsor needs a custom page */
+  showPage: Maybe<Scalars['Boolean']['output']>;
+  twitter: Maybe<Scalars['String']['output']>;
+  type: Maybe<SponsorType>;
+  url: Maybe<Scalars['String']['output']>;
+};
+
+export type SponsorFilter = {
+  /** Apply filters on document level */
+  _: InputMaybe<Sanity_DocumentFilter>;
+  _createdAt: InputMaybe<DatetimeFilter>;
+  _id: InputMaybe<IdFilter>;
+  _key: InputMaybe<StringFilter>;
+  _rev: InputMaybe<StringFilter>;
+  _type: InputMaybe<StringFilter>;
+  _updatedAt: InputMaybe<DatetimeFilter>;
+  de: InputMaybe<StringFilter>;
+  description: InputMaybe<RichTextFilter>;
+  image: InputMaybe<ImageFilter>;
+  instagram: InputMaybe<StringFilter>;
+  linkedin: InputMaybe<StringFilter>;
+  logo: InputMaybe<ImageFilter>;
+  name: InputMaybe<StringFilter>;
+  seoDescription: InputMaybe<StringFilter>;
+  seoImage: InputMaybe<ImageFilter>;
+  seoKeywords: InputMaybe<StringFilter>;
+  seoTitle: InputMaybe<StringFilter>;
+  showPage: InputMaybe<BooleanFilter>;
+  twitter: InputMaybe<StringFilter>;
+  type: InputMaybe<SponsorTypeFilter>;
+  url: InputMaybe<StringFilter>;
+};
+
+export type SponsorSorting = {
+  _createdAt: InputMaybe<SortOrder>;
+  _id: InputMaybe<SortOrder>;
+  _key: InputMaybe<SortOrder>;
+  _rev: InputMaybe<SortOrder>;
+  _type: InputMaybe<SortOrder>;
+  _updatedAt: InputMaybe<SortOrder>;
+  de: InputMaybe<SortOrder>;
+  description: InputMaybe<RichTextSorting>;
+  image: InputMaybe<ImageSorting>;
+  instagram: InputMaybe<SortOrder>;
+  linkedin: InputMaybe<SortOrder>;
+  logo: InputMaybe<ImageSorting>;
+  name: InputMaybe<SortOrder>;
+  seoDescription: InputMaybe<SortOrder>;
+  seoImage: InputMaybe<ImageSorting>;
+  seoKeywords: InputMaybe<SortOrder>;
+  seoTitle: InputMaybe<SortOrder>;
+  showPage: InputMaybe<SortOrder>;
+  twitter: InputMaybe<SortOrder>;
+  url: InputMaybe<SortOrder>;
+};
+
+export type SponsorType = Document & {
+  __typename?: 'SponsorType';
+  /** Date the document was created */
+  _createdAt: Maybe<Scalars['DateTime']['output']>;
+  /** Document ID */
+  _id: Maybe<Scalars['ID']['output']>;
+  _key: Maybe<Scalars['String']['output']>;
+  /** Current document revision */
+  _rev: Maybe<Scalars['String']['output']>;
+  /** Document type */
+  _type: Maybe<Scalars['String']['output']>;
+  /** Date the document was last modified */
+  _updatedAt: Maybe<Scalars['DateTime']['output']>;
+  benefits_list_1: Maybe<RichText>;
+  benefits_list_2: Maybe<RichText>;
+  description: Maybe<RichText>;
+  icon: Maybe<Scalars['String']['output']>;
+  name: Maybe<Scalars['String']['output']>;
+  position: Maybe<Scalars['String']['output']>;
+};
+
+export type SponsorTypeFilter = {
+  /** Apply filters on document level */
+  _: InputMaybe<Sanity_DocumentFilter>;
+  _createdAt: InputMaybe<DatetimeFilter>;
+  _id: InputMaybe<IdFilter>;
+  _key: InputMaybe<StringFilter>;
+  _rev: InputMaybe<StringFilter>;
+  _type: InputMaybe<StringFilter>;
+  _updatedAt: InputMaybe<DatetimeFilter>;
+  benefits_list_1: InputMaybe<RichTextFilter>;
+  benefits_list_2: InputMaybe<RichTextFilter>;
+  description: InputMaybe<RichTextFilter>;
+  icon: InputMaybe<StringFilter>;
+  name: InputMaybe<StringFilter>;
+  position: InputMaybe<StringFilter>;
+};
+
+export type SponsorTypeSorting = {
+  _createdAt: InputMaybe<SortOrder>;
+  _id: InputMaybe<SortOrder>;
+  _key: InputMaybe<SortOrder>;
+  _rev: InputMaybe<SortOrder>;
+  _type: InputMaybe<SortOrder>;
+  _updatedAt: InputMaybe<SortOrder>;
+  benefits_list_1: InputMaybe<RichTextSorting>;
+  benefits_list_2: InputMaybe<RichTextSorting>;
+  description: InputMaybe<RichTextSorting>;
+  icon: InputMaybe<SortOrder>;
+  name: InputMaybe<SortOrder>;
+  position: InputMaybe<SortOrder>;
+};
+
 export type StringFilter = {
   /** Checks if the value is equal to the given input. */
   eq: InputMaybe<Scalars['String']['input']>;
@@ -775,16 +1520,168 @@ export type StringFilter = {
   nin: InputMaybe<Array<Scalars['String']['input']>>;
 };
 
-export type AllNavsQueryVariables = Exact<{ [key: string]: never; }>;
+export type GetAllPagesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type AllNavsQuery = { __typename?: 'RootQuery', allNavs: Array<{ __typename?: 'Navs', title: string | null }> };
+export type GetAllPagesQuery = { __typename?: 'RootQuery', allPage: Array<{ __typename?: 'Page', _id: string | null, name: string | null, slug: { __typename?: 'Slug', current: string | null } | null }> };
+
+export type GetPageDetailsQueryVariables = Exact<{
+  input: Scalars['String']['input'];
+}>;
 
 
-export const AllNavsDocument = gql`
-    query allNavs {
-  allNavs {
-    title
+export type GetPageDetailsQuery = { __typename?: 'RootQuery', allPage: Array<{ __typename?: 'Page', _id: string | null, name: string | null, seoTitle: string | null, seoKeywords: string | null, seoDescription: string | null, slug: { __typename?: 'Slug', current: string | null } | null, seoImage: { __typename?: 'Image', asset: { __typename?: 'SanityImageAsset', _id: string | null, altText: string | null, path: string | null, label: string | null, title: string | null } | null } | null, navbar: { __typename?: 'Navbar', links: Array<{ __typename?: 'Link', url: string | null, text: string | null, target: string | null, icon: string | null, style: string | null } | null> | null } | null, footer: { __typename?: 'Footer', followLinks: Array<{ __typename?: 'Link', url: string | null, text: string | null, target: string | null, icon: string | null, style: string | null } | null> | null, sectionLinks: Array<{ __typename?: 'Link', url: string | null, text: string | null, target: string | null, icon: string | null, style: string | null } | null> | null } | null, sections: Array<{ __typename: 'Card' } | { __typename: 'CustomInfo', slug: string | null, name: string | null, description: { __typename?: 'RichText', name: string | null, textType: string | null, htmlTextRaw: unknown | null, markdownText: string | null } | null } | { __typename: 'Hero', heading: string | null, tagline: string | null, icon: string | null, actions: Array<{ __typename?: 'Link', url: string | null, text: string | null, target: string | null, icon: string | null, style: string | null } | null> | null, image: { __typename?: 'Image', asset: { __typename?: 'SanityImageAsset', _id: string | null, _key: string | null, altText: string | null, path: string | null, label: string | null, title: string | null } | null } | null, customAttributes: Array<{ __typename?: 'CustomAttributes', name: string | null, value: string | null } | null> | null } | { __typename: 'RichText', name: string | null, textType: string | null, htmlTextRaw: unknown | null, markdownText: string | null } | { __typename: 'Row', rowType: string | null, title: string | null, icon: string | null, description: { __typename?: 'RichText', name: string | null, htmlTextRaw: unknown | null, markdownText: string | null } | null, children: Array<{ __typename: 'Card', title: string | null, showType: string | null, icon: string | null, description: { __typename?: 'RichText', name: string | null, textType: string | null, htmlTextRaw: unknown | null, markdownText: string | null } | null, image: { __typename?: 'Image', asset: { __typename?: 'SanityImageAsset', _id: string | null, altText: string | null, path: string | null, label: string | null, title: string | null } | null } | null } | { __typename: 'Image', asset: { __typename?: 'SanityImageAsset', _id: string | null, altText: string | null, path: string | null, label: string | null, title: string | null } | null } | { __typename: 'RichText', name: string | null, textType: string | null, htmlTextRaw: unknown | null, markdownText: string | null } | null> | null } | null> | null }> };
+
+
+export const GetAllPagesDocument = gql`
+    query getAllPages {
+  allPage(where: {dynamicPage: {eq: true}}) {
+    _id
+    name
+    slug {
+      current
+    }
+  }
+}
+    `;
+export const GetPageDetailsDocument = gql`
+    query getPageDetails($input: String!) {
+  allPage(where: {slug: {current: {eq: $input}}}) {
+    _id
+    name
+    slug {
+      current
+    }
+    seoTitle
+    seoKeywords
+    seoDescription
+    seoImage {
+      asset {
+        _id
+        altText
+        path
+        label
+        title
+      }
+    }
+    navbar {
+      links {
+        url
+        text
+        target
+        icon
+        style
+      }
+    }
+    footer {
+      followLinks {
+        url
+        text
+        target
+        icon
+        style
+      }
+      sectionLinks {
+        url
+        text
+        target
+        icon
+        style
+      }
+    }
+    sections {
+      __typename
+      ... on CustomInfo {
+        slug
+        name
+        description {
+          name
+          textType
+          htmlTextRaw
+          markdownText
+        }
+      }
+      ... on Hero {
+        heading
+        tagline
+        icon
+        actions {
+          url
+          text
+          target
+          icon
+          style
+        }
+        image {
+          asset {
+            _id
+            _key
+            altText
+            path
+            label
+            title
+          }
+        }
+        customAttributes {
+          name
+          value
+        }
+      }
+      ... on RichText {
+        name
+        textType
+        htmlTextRaw
+        markdownText
+      }
+      ... on Row {
+        rowType
+        title
+        description {
+          name
+          htmlTextRaw
+          markdownText
+        }
+        icon
+        children {
+          __typename
+          ... on Card {
+            title
+            description {
+              name
+              textType
+              htmlTextRaw
+              markdownText
+            }
+            showType
+            icon
+            image {
+              asset {
+                _id
+                altText
+                path
+                label
+                title
+              }
+            }
+          }
+          ... on Image {
+            asset {
+              _id
+              altText
+              path
+              label
+              title
+            }
+          }
+          ... on RichText {
+            name
+            textType
+            htmlTextRaw
+            markdownText
+          }
+        }
+      }
+    }
   }
 }
     `;
@@ -796,8 +1693,11 @@ const defaultWrapper: SdkFunctionWrapper = (action, _operationName, _operationTy
 
 export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = defaultWrapper) {
   return {
-    allNavs(variables?: AllNavsQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<AllNavsQuery> {
-      return withWrapper((wrappedRequestHeaders) => client.request<AllNavsQuery>(AllNavsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'allNavs', 'query', variables);
+    getAllPages(variables?: GetAllPagesQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<GetAllPagesQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetAllPagesQuery>(GetAllPagesDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getAllPages', 'query', variables);
+    },
+    getPageDetails(variables: GetPageDetailsQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<GetPageDetailsQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetPageDetailsQuery>(GetPageDetailsDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getPageDetails', 'query', variables);
     }
   };
 }
