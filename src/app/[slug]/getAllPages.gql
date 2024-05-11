@@ -1,0 +1,9 @@
+query getAllPages {
+  allPage(where: { dynamicPage: { eq: true } }) {
+    _id
+    name
+    slug {
+      current
+    }
+  }
+}
