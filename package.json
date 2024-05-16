@@ -26,6 +26,7 @@
     "@tsparticles/react": "^3.0.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.0",
+    "easymde": "^2.18.0",
     "graphql": "^16.8.1",
     "graphql-request": "^6.1.0",
     "lucide-react": "^0.335.0",
@@ -36,6 +37,7 @@
     "react": "^18",
     "react-dom": "^18",
     "sanity": "^3.36.3",
+    "sanity-plugin-markdown": "^4.1.2",
     "styled-components": "^6.1.8",
     "tailwind-merge": "^2.2.1",
     "tsparticles": "^3.2.2"
