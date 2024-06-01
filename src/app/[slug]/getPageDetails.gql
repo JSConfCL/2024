@@ -1,0 +1,139 @@
+query getPageDetails($input: String!) {
+  allPage(where: { slug: { current: { eq: $input } } }) {
+    _id
+    name
+    slug {
+      current
+    }
+    seoTitle
+    seoKeywords
+    seoDescription
+    seoImage {
+      asset {
+        _id
+        altText
+        path
+        label
+        title
+      }
+    }
+    navbar {
+      links {
+        url
+        text
+        target
+        icon
+        style
+      }
+    }
+    footer {
+      followLinks {
+        url
+        text
+        target
+        icon
+        style
+      }
+      sectionLinks {
+        url
+        text
+        target
+        icon
+        style
+      }
+    }
+    sections {
+      __typename
+      ... on CustomInfo {
+        slug
+        name
+        description {
+          name
+          textType
+          htmlTextRaw
+          markdownText
+        }
+      }
+      ... on Hero {
+        heading
+        tagline
+        icon
+        actions {
+          url
+          text
+          target
+          icon
+          style
+        }
+        image {
+          asset {
+            _id
+            _key
+            altText
+            path
+            label
+            title
+          }
+        }
+        customAttributes {
+          name
+          value
+        }
+      }
+      ... on RichText {
+        name
+        textType
+        htmlTextRaw
+        markdownText
+      }
+      ... on Row {
+        rowType
+        title
+        description {
+          name
+          htmlTextRaw
+          markdownText
+        }
+        icon
+        children {
+          __typename
+          ... on Card {
+            title
+            description {
+              name
+              textType
+              htmlTextRaw
+              markdownText
+            }
+            showType
+            icon
+            image {
+              asset {
+                _id
+                altText
+                path
+                label
+                title
+              }
+            }
+          }
+          ... on Image {
+            asset {
+              _id
+              altText
+              path
+              label
+              title
+            }
+          }
+          ... on RichText {
+            name
+            textType
+            htmlTextRaw
+            markdownText
+          }
+        }
+      }
+    }
+  }
+}
