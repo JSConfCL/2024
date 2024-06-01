@@ -1,7 +1,5 @@
+import { Hallulla, Link } from "@/components";
 import { ExternalLink } from "lucide-react";
-
-import { Hallulla } from "@/components/Icons/Hallulla";
-import { Link } from "@/components/Link";
 
 export interface CallToActionProps {
   url: string;

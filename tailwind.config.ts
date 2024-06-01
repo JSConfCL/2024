@@ -10,11 +10,11 @@ const config: Config = {
   theme: {
     extend: {
       animation: {
-        'gradient-text': 'gradient-text 5s ease infinite',
-        'gradient-svg': 'gradient-svg 5s ease infinite'
+        "gradient-text": "gradient-text 5s ease infinite",
+        "gradient-svg": "gradient-svg 5s ease infinite",
       },
       backgroundImage: {
-        "noise": "url('/images/background/noise.webp')",
+        noise: "url('/assets/images/background/noise.webp')",
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
@@ -24,34 +24,34 @@ const config: Config = {
         "jsconf-black": "#1E2019",
         "jsconf-red": "#F45B69",
         "mountain-primary": "#9A8025",
-        "mountain-secondary": "#EDE060"
+        "mountain-secondary": "#EDE060",
       },
       fontFamily: {
-        koulen: ['var(--font-koulen)'],
-        barlow: ['var(--font-barlow)'],
-        inconsolata: ['var(--font-inconsolata)']
+        koulen: ["var(--font-koulen)"],
+        barlow: ["var(--font-barlow)"],
+        inconsolata: ["var(--font-inconsolata)"],
       },
       keyframes: {
         "gradient-text": {
           "0%, 100%": {
-              "background-size":"200% 200%",
-              "background-position": "left center"
+            "background-size": "200% 200%",
+            "background-position": "left center",
           },
           "50%": {
-              "background-size":"200% 200%",
-              "background-position": "right center"
-          }
+            "background-size": "200% 200%",
+            "background-position": "right center",
+          },
         },
         "gradient-svg": {
           "0%, 100%": {
-            "color": "var(--tw-gradient-from)"
+            color: "var(--tw-gradient-from)",
           },
           "50%": {
-            "color": "var(--tw-gradient-to)"
-          }
-        }
-      }
-    }
+            color: "var(--tw-gradient-to)",
+          },
+        },
+      },
+    },
   },
   plugins: [],
 };

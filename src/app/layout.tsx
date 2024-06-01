@@ -4,7 +4,7 @@ import { clsx } from "clsx";
 
 import { CSPostHogProvider } from "./providers";
 
-import "./globals.css";
+import "@/styles/globals.css";
 
 const koulen = Koulen({
   subsets: ["latin"],

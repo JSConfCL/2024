@@ -1,7 +1,8 @@
-import { CallToActionProps, Hero, ImageProps } from "@/sections/Hero/Hero";
+import { cfp as data, footer, getMetaData, getViewports } from "@/lib";
+
 import { Header } from "@/components/Header/Header";
-import { cfp as data, footer } from "@/lib/data";
-import { getMetaData, getViewports } from "@/lib/metadata";
+
+import { CallToActionProps, Hero, ImageProps } from "./_sections";
 
 export const generateMetadata = () =>
   getMetaData({
