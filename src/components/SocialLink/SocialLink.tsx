@@ -1,14 +1,12 @@
 import { Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 
-export function HeaderLink({
+export function SocialLink({
   link: { id, url },
 }: {
   link: { id: string; url: string };
 }) {
   return (
     <a
-      key={id}
-      id={id}
       href={url}
       className="rounded-full p-2 hover:bg-[#EDE06033]"
       target="_blank"

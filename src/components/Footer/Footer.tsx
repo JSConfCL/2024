@@ -1,9 +1,9 @@
 import { ExternalLink } from "lucide-react";
 
-import { HeaderLink } from "@/components/Header/HeaderLink";
 import { Logo } from "@/components/Icons/Logo";
 import { Title } from "@/components/Icons/Title";
 import { Link } from "@/components/Link";
+import { SocialLink } from "@/components/SocialLink/SocialLink";
 import { footer, links } from "@/lib/data";
 import { theme } from "@/lib/theme";
 
@@ -24,7 +24,7 @@ export function Footer() {
                 <span>Siguenos: </span>
                 <div className="ml-2 flex items-center gap-1">
                   {links.map((link) => (
-                    <HeaderLink key={link.id} link={link} />
+                    <SocialLink key={link.id} link={link} />
                   ))}
                 </div>
               </div>
