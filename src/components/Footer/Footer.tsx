@@ -10,7 +10,7 @@ import { theme } from "@/lib/theme";
 export function Footer() {
   return (
     <footer className="relative z-10 font-barlow text-white before:absolute before:inset-0 before:z-10 before:w-[80%] before:bg-gradient-to-r before:from-jsconf-yellow before:via-jsconf-yellow before:to-transparent before:opacity-10 before:content-[''] before:md:w-[60%] before:md:from-transparent before:md:via-jsconf-yellow">
-      <div className="mx-6 flex flex-col before:top-0 before:h-0.5 before:w-full before:bg-gradient-to-r before:from-transparent before:from-10% before:via-jsconf-yellow before:via-50% before:to-transparent before:to-90% before:content-[''] lg:mx-auto lg:w-11/12 xl:w-8/12">
+      <div className="flex max-w-[1136px] flex-col p-4 pt-0 before:top-0 before:h-0.5 before:w-full before:bg-gradient-to-r before:from-transparent before:from-10% before:via-jsconf-yellow before:via-50% before:to-transparent before:to-90% before:content-[''] lg:mx-auto">
         <div className="flex w-full flex-col gap-8 py-14">
           <div className="grid grid-cols-1 gap-6 px-6 lg:grid-cols-8 lg:gap-8 lg:px-0">
             <div className="col-span-1 flex flex-col items-center gap-4 lg:col-span-2 lg:items-start">
