@@ -1,6 +1,20 @@
 import { ExternalLink } from "lucide-react";
 
-import { Hallulla } from "@/components/Icons/Hallulla";
+import {
+  Avocado,
+  Doblado,
+  Empanada,
+  Hallulla,
+  Lapageria,
+  Logo,
+  Marraqueta,
+  Moai,
+  Mote,
+  Mountain,
+  Volcano,
+  Windmill,
+  Wine,
+} from "@/components/Icons";
 import { Link } from "@/components/Link";
 
 export interface CallToActionProps {
@@ -23,7 +37,26 @@ export interface HeroProps {
   iconOffset?: string;
 }
 
-export const Hero = ({ title, description, cta, image }: HeroProps) => {
+export const Hero = ({ title, description, cta, image, icon }: HeroProps) => {
+  const icons = {
+    avocado: Avocado,
+    doblado: Doblado,
+    empanada: Empanada,
+    hallulla: Hallulla,
+    lapageria: Lapageria,
+    logo: Logo,
+    marraqueta: Marraqueta,
+    moai: Moai,
+    mote: Mote,
+    mountain: Mountain,
+    volcano: Volcano,
+    windmill: Windmill,
+    wine: Wine,
+  };
+
+  // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
+  const Icon = icon ? icons[icon as keyof typeof icons] : Avocado ?? Avocado;
+
   return (
     <>
       <div className="container mx-auto max-w-[1136px] p-4">
@@ -32,7 +65,7 @@ export const Hero = ({ title, description, cta, image }: HeroProps) => {
             <div className="flex flex-row gap-2">
               <div className="flex flex-col">
                 <div className="mx-auto size-12 bg-[radial-gradient(50%_50%_at_50%_50%,_rgba(136,_113,_31,_0.79)_0%,_rgba(42,_36,_1,_0)_100%)]">
-                  <Hallulla />
+                  <Icon />
                 </div>
                 <div className="relative top-[-6px] z-[-1] mx-8 h-full w-[2px] shrink-0 bg-gradient-to-b from-jsconf-yellow via-jsconf-black via-50% to-transparent to-80% md:to-jsconf-black md:to-80%" />
               </div>
