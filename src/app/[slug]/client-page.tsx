@@ -33,6 +33,7 @@ export default function Page({ page }: { page: PageType }) {
                     url: section.actions?.[0]?.url ?? "",
                     text: section.actions?.[0]?.text ?? "",
                   }}
+                  icon={section?.icon ?? ''}
                   image={{
                     src: section?.image?.asset
                       ? urlForImage(section.image.asset as unknown as Image)
