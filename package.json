@@ -25,7 +25,7 @@
     "@tsparticles/engine": "^3.2.2",
     "@tsparticles/react": "^3.0.0",
     "class-variance-authority": "^0.7.0",
-    "clsx": "^2.1.0",
+    "clsx": "^2.1.1",
     "easymde": "^2.18.0",
     "graphql": "^16.8.1",
     "graphql-request": "^6.1.0",
@@ -39,7 +39,8 @@
     "sanity": "^3.36.3",
     "sanity-plugin-markdown": "^4.1.2",
     "styled-components": "^6.1.8",
-    "tailwind-merge": "^2.2.1",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss-animate": "^1.0.7",
     "tsparticles": "^3.2.2"
   },
   "devDependencies": {
