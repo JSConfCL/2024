@@ -1,7 +1,8 @@
 import { ExternalLink } from "lucide-react";
 
-import { Hallulla } from "@/components/Icons/Hallulla";
+
 import { Link } from "@/components/Link";
+import { IconCatalog, Svg } from "@/components/Svgs";
 
 export interface CallToActionProps {
   url: string;
@@ -32,7 +33,7 @@ export const Hero = ({ title, description, cta, image }: HeroProps) => {
             <div className="flex flex-row gap-2">
               <div className="flex flex-col">
                 <div className="mx-auto size-12 bg-[radial-gradient(50%_50%_at_50%_50%,_rgba(136,_113,_31,_0.79)_0%,_rgba(42,_36,_1,_0)_100%)]">
-                  <Hallulla />
+                  <Svg catalog={IconCatalog.hallulla} />
                 </div>
                 <div className="relative top-[-6px] z-[-1] mx-8 h-full w-[2px] shrink-0 bg-gradient-to-b from-jsconf-yellow via-jsconf-black via-50% to-transparent to-80% md:to-jsconf-black md:to-80%" />
               </div>
