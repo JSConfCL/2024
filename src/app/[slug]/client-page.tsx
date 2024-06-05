@@ -4,6 +4,7 @@ import type { Image } from "sanity";
 
 import { Hero } from "@/sections/Hero/Hero";
 import { Footer } from "@/components/Footer/Footer";
+import { Header } from "@/components/Header/Header";
 import { getMetaData, getViewports } from "@/lib/metadata";
 
 export const generateMetadata = () => getMetaData({});
@@ -12,8 +13,10 @@ export const generateViewport = getViewports;
 
 export default function Page({ page }: { page: PageType }) {
   const footerData = page.footer;
+  const headerData = page.navbar;
   return (
     <div>
+      <Header links={headerData?.links} />
       {page.sections?.map((section, idx) => {
         if (section?.__typename == "Hero") {
           console.log("ATTRIBUTES", section.customAttributes);

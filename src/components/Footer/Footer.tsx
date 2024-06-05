@@ -1,5 +1,4 @@
-import { Link as LinkType } from "@/api/types";
-import { Maybe } from "graphql/jsutils/Maybe";
+import { Link as LinkType, Maybe } from "@/api/types";
 import {
   ExternalLink,
   Facebook,
@@ -54,7 +53,9 @@ export function Footer({ followLinks, sectionLinks }: FooterProps) {
                             key={link._key}
                             href={link.url || ""}
                             target={link.target || "_blank"}
-                            variant={"transparent"}
+                            variant={
+                              link.style === "button" ? "transparent" : "link"
+                            }
                           >
                             {link.icon &&
                               socialMediaIcons[link.icon?.toLowerCase()]}
@@ -74,7 +75,9 @@ export function Footer({ followLinks, sectionLinks }: FooterProps) {
                         key={link._key}
                         href={link.url || ""}
                         target={link.target || "_blank"}
-                        variant={"link"}
+                        variant={
+                          link.style === "button" ? "transparent" : "link"
+                        }
                       >
                         {link.text && link.text}
                       </Link>

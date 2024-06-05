@@ -19,6 +19,7 @@ query getPageDetails($input: String!) {
     }
     navbar {
       links {
+        _key
         url
         text
         target
