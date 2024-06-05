@@ -28,6 +28,7 @@ query getPageDetails($input: String!) {
     }
     footer {
       followLinks {
+        _key
         url
         text
         target
@@ -35,6 +36,7 @@ query getPageDetails($input: String!) {
         style
       }
       sectionLinks {
+        _key
         url
         text
         target

@@ -3,6 +3,7 @@ import { urlForImage } from "@/sanity/lib/image";
 import type { Image } from "sanity";
 
 import { Hero } from "@/sections/Hero/Hero";
+import { Footer } from "@/components/Footer/Footer";
 import { getMetaData, getViewports } from "@/lib/metadata";
 
 export const generateMetadata = () => getMetaData({});
@@ -10,6 +11,7 @@ export const generateMetadata = () => getMetaData({});
 export const generateViewport = getViewports;
 
 export default function Page({ page }: { page: PageType }) {
+  const footerData = page.footer;
   return (
     <div>
       {page.sections?.map((section, idx) => {
@@ -42,6 +44,10 @@ export default function Page({ page }: { page: PageType }) {
           );
         }
       })}
+      <Footer
+        followLinks={footerData?.followLinks}
+        sectionLinks={footerData?.sectionLinks}
+      />
     </div>
   );
 }
