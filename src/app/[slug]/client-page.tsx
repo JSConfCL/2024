@@ -1,4 +1,4 @@
-import type { Page as PageType } from "@/api/types";
+import type { Link, Page as PageType } from "@/api/types";
 import { urlForImage } from "@/sanity/lib/image";
 import type { Image } from "sanity";
 
@@ -12,11 +12,14 @@ export const generateMetadata = () => getMetaData({});
 export const generateViewport = getViewports;
 
 export default function Page({ page }: { page: PageType }) {
-  const hasNavbar = page?.navbar;
+  const navbarLinks = (
+    page?.navbar?.links ? page?.navbar?.links?.filter(Boolean) : []
+  ) as Link[];
   const hasFooter = page?.footer;
+
   return (
     <>
-      {hasNavbar ? <Header /> : null}
+      {navbarLinks.length ? <Header links={navbarLinks} /> : null}
       <div className="md:min-h-[calc(100vh_-_390px)]">
         {page.sections?.map((section, idx) => {
           if (section?.__typename == "Hero") {
