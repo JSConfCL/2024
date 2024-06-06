@@ -11,6 +11,7 @@ import { theme } from "@/lib/theme";
 import { cn } from "@/lib/utils";
 
 import { HeaderLink } from "./HeaderLink";
+import { MobileNav } from "./MobileNav";
 
 export function Header({ links }: { links?: LinkType[] }) {
   const pathname = usePathname();
@@ -20,7 +21,9 @@ export function Header({ links }: { links?: LinkType[] }) {
       <Link href="/">
         <Logo color={theme?.colors?.jsconfYellow} size="36" />
       </Link>
-      <div className={cn("flex items-center", links ? "gap-2" : "gap-4")}>
+      <div
+        className={cn("hidden items-center md:flex", links ? "gap-2" : "gap-4")}
+      >
         {links
           ? links.map((link) => (
               <HeaderLink
@@ -31,6 +34,7 @@ export function Header({ links }: { links?: LinkType[] }) {
             ))
           : socialLinks.map((link) => <SocialLink key={link.id} link={link} />)}
       </div>
+      {links?.length ? <MobileNav links={links} activePath={pathname} /> : null}
     </header>
   );
 }

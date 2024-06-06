@@ -15,12 +15,7 @@ export function HeaderLink({
   isActive,
 }: HeaderLinkProps) {
   const Comp = url?.startsWith("/") && target === "_self" ? Link : "a";
-  console.log(
-    url,
-    url?.startsWith("/"),
-    target === "_self",
-    url?.startsWith("/") && target === "self" ? "Link" : "a",
-  );
+
   return (
     <Comp
       href={url ?? ""}
@@ -30,7 +25,7 @@ export function HeaderLink({
         style === "button"
           ? "border rounded-md	border-jsconf-yellow text-white hover:bg-[#F0E04060] hover:text-black"
           : "",
-        isActive ? "underline underline-offset-4 text-jsconf-yellow" : "",
+        isActive ? "underline underline-offset-8 text-jsconf-yellow" : "",
       )}
       rel={target == "_blank" ? "noreferrer" : ""}
     >
