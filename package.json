@@ -20,6 +20,7 @@
     "node": ">=18.17.0"
   },
   "dependencies": {
+    "@radix-ui/react-slot": "^1.0.2",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.36.3",
     "@tsparticles/engine": "^3.2.2",
