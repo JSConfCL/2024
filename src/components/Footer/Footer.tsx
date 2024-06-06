@@ -11,7 +11,10 @@ import {
 import { Logo } from "@/components/Icons/Logo";
 import { Title } from "@/components/Icons/Title";
 import { Link } from "@/components/Link";
+import { footer, links } from "@/lib/data";
 import { theme } from "@/lib/theme";
+
+import { SocialLink } from "../SocialLink/SocialLink";
 
 interface FooterProps {
   followLinks?: Maybe<Maybe<LinkType>[]>;
@@ -43,44 +46,58 @@ export function Footer({ followLinks, sectionLinks }: FooterProps) {
               <div className="flex items-center text-jsconf-yellow">
                 <span>Siguenos: </span>
                 <div className="ml-2 flex items-center gap-1">
-                  {followLinks &&
-                    followLinks.map(
-                      (link) =>
-                        link && (
-                          <Link
-                            key={link._key}
-                            href={link.url || ""}
-                            target={link.target || "_blank"}
-                            variant={
-                              link.style === "button" ? "transparent" : "link"
-                            }
-                          >
-                            {link.icon &&
-                              socialMediaIcons[link.icon?.toLowerCase()]}
-                          </Link>
-                        ),
-                    )}
+                  {followLinks
+                    ? followLinks.map(
+                        (link) =>
+                          link && (
+                            <Link
+                              key={link._key}
+                              href={link.url || ""}
+                              target={link.target || "_blank"}
+                              variant={
+                                link.style === "button" ? "transparent" : "link"
+                              }
+                            >
+                              {link.icon &&
+                                socialMediaIcons[link.icon?.toLowerCase()]}
+                            </Link>
+                          ),
+                      )
+                    : links.map((link) => (
+                        <SocialLink key={link.id} link={link} />
+                      ))}
                 </div>
               </div>
             </div>
             <div className="col-span-1 flex flex-col items-center gap-2 lg:col-span-2 lg:items-start">
               <p className="text-xl text-gray-400">Información</p>
-              {sectionLinks &&
-                sectionLinks.map(
-                  (link) =>
-                    link && (
-                      <Link
-                        key={link._key}
-                        href={link.url || ""}
-                        target={link.target || "_blank"}
-                        variant={
-                          link.style === "button" ? "transparent" : "link"
-                        }
-                      >
-                        {link.text && link.text}
-                      </Link>
-                    ),
-                )}
+              {sectionLinks
+                ? sectionLinks.map(
+                    (link) =>
+                      link && (
+                        <Link
+                          key={link._key}
+                          href={link.url || ""}
+                          target={link.target || "_blank"}
+                          variant={
+                            link.style === "button" ? "transparent" : "link"
+                          }
+                        >
+                          {link.text && link.text}
+                        </Link>
+                      ),
+                  )
+                : footer.map((item) => (
+                    <a
+                      key={item.id}
+                      href={item.url}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="hover:text-jsconf-yellow"
+                    >
+                      {item.name}
+                    </a>
+                  ))}
             </div>
             <div className="col-span-1 flex flex-col items-center gap-2 lg:col-span-4 lg:items-end">
               <div className="flex flex-col justify-end gap-2">
