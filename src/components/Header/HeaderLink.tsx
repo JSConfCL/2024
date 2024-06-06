@@ -1,22 +1,36 @@
-import { Link as LinkType, Maybe } from "@/api/types";
+import Link from "next/link";
+import type { Link as LinkType } from "@/api/types";
+import { LogIn } from "lucide-react";
 
-import { Link } from "../Link";
+import { cn } from "@/lib/utils";
 
-interface HeaderLinkProps {
-  link: Maybe<Maybe<LinkType>>;
-}
+type HeaderLinkProps = LinkType & { isActive: boolean };
 
-export function HeaderLink({ link }: HeaderLinkProps) {
+export function HeaderLink({
+  url,
+  target,
+  text,
+  icon,
+  style,
+  isActive,
+}: HeaderLinkProps) {
+  const Comp = url?.startsWith("/") && target === "_self" ? Link : "a";
+
   return (
-    link && (
-      <Link
-        href={link.url || ""}
-        target={link.target || "_blank"}
-        rel="noreferrer"
-        variant="link"
-      >
-        {link.text && link.text}
-      </Link>
-    )
+    <Comp
+      href={url ?? ""}
+      target={target ?? ""}
+      className={cn(
+        "flex gap-2 font-barlow font-medium text-white rounded-full p-4 py-2 hover:text-jsconf-yellow",
+        style === "button"
+          ? "border rounded-md	border-jsconf-yellow text-white hover:bg-[#F0E04060] hover:text-black"
+          : "",
+        isActive ? "underline underline-offset-8 text-jsconf-yellow" : "",
+      )}
+      rel={target == "_blank" ? "noreferrer" : ""}
+    >
+      {text}
+      {icon === "external" ? <LogIn /> : null}
+    </Comp>
   );
 }

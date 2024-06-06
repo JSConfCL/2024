@@ -27,14 +27,12 @@ const socialMediaIcons: { [key: string]: React.ReactNode } = {
 };
 
 export function Footer({ followLinks, sectionLinks }: FooterProps) {
-  console.log("followlinks", followLinks);
-  console.log("sectionLinks", sectionLinks);
   return (
     <footer className="relative z-10 font-barlow text-white">
       <div className="absolute inset-0 -z-10 w-[80%] bg-gradient-to-r from-jsconf-yellow via-jsconf-yellow to-transparent opacity-10 content-[''] md:w-[60%] md:from-transparent md:via-jsconf-yellow" />
       <div className="mx-6 flex flex-col before:top-0 before:h-0.5 before:w-full before:bg-gradient-to-r before:from-transparent before:from-10% before:via-jsconf-yellow before:via-50% before:to-transparent before:to-90% before:content-[''] lg:mx-auto lg:w-11/12 xl:w-8/12">
         <div className="flex w-full flex-col gap-8 py-14">
-          <div className="grid grid-cols-1 gap-6 px-6 lg:grid-cols-8 lg:gap-8 lg:px-0">
+          <div className="z-10 grid grid-cols-1 gap-6 px-6 lg:grid-cols-8 lg:gap-8 lg:px-0">
             <div className="col-span-1 flex flex-col items-center gap-4 lg:col-span-2 lg:items-start">
               <div className="flex">
                 <a href="/" className="flex items-center gap-3">
