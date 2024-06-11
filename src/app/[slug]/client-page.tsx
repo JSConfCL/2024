@@ -15,7 +15,7 @@ export default function Page({ page }: { page: PageType }) {
   const navbarLinks = (
     page?.navbar?.links ? page?.navbar?.links?.filter(Boolean) : []
   ) as Link[];
-  const hasFooter = page?.footer;
+  const footerData = page?.footer;
 
   return (
     <>
@@ -52,7 +52,12 @@ export default function Page({ page }: { page: PageType }) {
           }
         })}
       </div>
-      {hasFooter ? <Footer /> : null}
+      {footerData && (
+        <Footer
+          followLinks={footerData.followLinks}
+          sectionLinks={footerData.sectionLinks}
+        />
+      )}
     </>
   );
 }

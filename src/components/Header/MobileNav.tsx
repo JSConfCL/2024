@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import type { Link as LinkType } from "@/api/types";
+import type { Link as LinkType, Maybe } from "@/api/types";
 import { LogIn, Menu } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
@@ -16,7 +16,7 @@ export function MobileNav({
   links,
   activePath,
 }: {
-  links: LinkType[];
+  links?: Maybe<Maybe<LinkType>[]>;
   activePath?: string;
 }) {
   const [open, setOpen] = useState(false);
@@ -40,31 +40,36 @@ export function MobileNav({
         <ScrollArea className="my-4 px-6 pb-10">
           <div className="flex flex-col space-y-2">
             <div className="flex flex-col space-y-3 pt-6">
-              {links.map((link) => {
-                const Comp =
-                  link.url?.startsWith("/") && link?.target === "_self"
-                    ? Link
-                    : "a";
-                return (
-                  <Comp
-                    key={`mobile-${link.text}`}
-                    href={link.url ?? ""}
-                    target={link.target ?? ""}
-                    className={cn(
-                      "flex font-barlow justify-center	gap-2 p-4 py-2",
-                      link.style === "button"
-                        ? "border rounded-md	border-jsconf-yellow text-white hover:bg-[#F0E04060] hover:text-black"
-                        : "",
-                      activePath == link.url
-                        ? "underline underline-offset-8 text-jsconf-yellow"
-                        : "",
-                    )}
-                  >
-                    {link.text}
-                    {link.icon === "external" ? <LogIn /> : null}
-                  </Comp>
-                );
-              })}
+              {links &&
+                links.map((link) => {
+                  const Comp =
+                    link &&
+                    link.url?.startsWith("/") &&
+                    link?.target === "_self"
+                      ? Link
+                      : "a";
+                  return (
+                    link && (
+                      <Comp
+                        key={`mobile-${link.text}`}
+                        href={link.url ?? ""}
+                        target={link.target ?? ""}
+                        className={cn(
+                          "flex font-barlow justify-center	gap-2 p-4 py-2",
+                          link.style === "button"
+                            ? "border rounded-md	border-jsconf-yellow text-white hover:bg-[#F0E04060] hover:text-black"
+                            : "",
+                          activePath == link.url
+                            ? "underline underline-offset-8 text-jsconf-yellow"
+                            : "",
+                        )}
+                      >
+                        {link.text}
+                        {link.icon === "external" ? <LogIn /> : null}
+                      </Comp>
+                    )
+                  );
+                })}
             </div>
           </div>
         </ScrollArea>

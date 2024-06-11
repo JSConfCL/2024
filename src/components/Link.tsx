@@ -14,6 +14,8 @@ const linkVariants = cva(
         default: "bg-jsconf-yellow text-black hover:bg-[#C8BC4F]",
         outline:
           "border border-jsconf-yellow bg-stone-950 text-white hover:bg-stone-900",
+        link: "mb-0 w-auto p-0 text-base font-normal hover:text-jsconf-yellow",
+        transparent: "rounded-full p-2 hover:bg-[#EDE06033]",
       },
     },
     defaultVariants: {

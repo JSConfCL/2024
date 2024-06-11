@@ -14,7 +14,8 @@
     "lint:fix": "eslint ./src --cache --fix",
     "prettier": "prettier ./src --cache --check",
     "prettier:fix": "prettier ./src --cache --write",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "commit": "cz"
   },
   "engines": {
     "node": ">=18.17.0"
@@ -63,6 +64,8 @@
     "@typescript-eslint/eslint-plugin": "^6.21.0",
     "@typescript-eslint/parser": "^6.21.0",
     "autoprefixer": "^10.0.1",
+    "commitizen": "^4.3.0",
+    "cz-conventional-changelog": "^3.3.0",
     "eslint": "^8",
     "eslint-config-next": "14.1.0",
     "eslint-config-prettier": "^9.1.0",
@@ -82,5 +85,10 @@
   "lint-staged": {
     "src/*.{js,jsx,ts,tsx}": "eslint --cache --fix",
     "src/*.{js,jsx,ts,tsx,css,md}": "prettier --write"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
