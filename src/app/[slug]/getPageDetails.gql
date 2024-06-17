@@ -98,6 +98,7 @@ query getPageDetails($input: String!) {
           markdownText
         }
         icon
+        inverse
         children {
           __typename
           ... on Card {
