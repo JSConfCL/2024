@@ -45,7 +45,7 @@ export default function RootLayout({
             koulen.variable,
             barlow.variable,
             inconsolata.variable,
-            "relative z-50 bg-[#090907] after:pointer-events-none after:absolute after:inset-0 after:size-full after:select-none after:bg-noise after:bg-repeat after:content-['']",
+            "relative z-50 bg-[#090907]",
           )}
         >
           {children}
