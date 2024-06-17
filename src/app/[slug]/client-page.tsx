@@ -3,8 +3,11 @@ import { urlForImage } from "@/sanity/lib/image";
 import type { Image } from "sanity";
 
 import { Hero } from "@/sections/Hero/Hero";
+import { Card } from "@/components/Card/Card";
 import { Footer } from "@/components/Footer/Footer";
 import { Header } from "@/components/Header/Header";
+import { RichText, RichTextStyle } from "@/components/RichText/RichText";
+import { Row, RowType } from "@/components/Row/Row";
 import { getMetaData, getViewports } from "@/lib/metadata";
 
 export const generateMetadata = () => getMetaData({});
@@ -33,7 +36,7 @@ export default function Page({ page }: { page: PageType }) {
                     url: section.actions?.[0]?.url ?? "",
                     text: section.actions?.[0]?.text ?? "",
                   }}
-                  icon={section?.icon ?? ''}
+                  icon={section?.icon ?? ""}
                   image={{
                     src: section?.image?.asset
                       ? urlForImage(section.image.asset as unknown as Image)
@@ -49,6 +52,52 @@ export default function Page({ page }: { page: PageType }) {
                   }}
                 />
               </div>
+            );
+          }
+          if (section?.__typename == "Row") {
+            return (
+              <Row key={idx} rowType={(section.rowType ?? "") as RowType}>
+                {(section.children ?? [])
+                  .filter((child) =>
+                    ["Image", "Card", "RichText"].includes(
+                      child?.__typename ?? "",
+                    ),
+                  )
+                  .map((child, idx) => {
+                    if (child?.__typename === "Image") {
+                      return (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          key={idx}
+                          className="mx-auto w-full rounded-2xl"
+                          src={urlForImage(child.asset as unknown as Image)}
+                          alt={child.asset?.altText ?? ""}
+                        />
+                      );
+                    }
+                    if (child?.__typename === "Card") {
+                      return (
+                        <Card key={idx}>
+                          <h2 className="pb-10 text-center text-4xl font-semibold md:text-left">
+                            {child.title}
+                          </h2>
+                          <RichText
+                            value={child.description}
+                            style={
+                              page.slug?.current?.replace(
+                                "new",
+                                "",
+                              ) as RichTextStyle
+                            }
+                          />
+                        </Card>
+                      );
+                    }
+                    return (
+                      <div key={idx}>{JSON.stringify(child?.__typename)}</div>
+                    );
+                  })}
+              </Row>
             );
           }
         })}
