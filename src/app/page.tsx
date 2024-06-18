@@ -59,7 +59,7 @@ export default function Home() {
                   </Link>
                 </div>
                 <div className="w-full md:w-auto">
-                  <Link href="/cfp" variant="outline">
+                  <Link href="/newcfp" variant="outline">
                     Registro CFP <ScrollText size={16} />
                   </Link>
                 </div>
