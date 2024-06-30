@@ -67,3 +67,4 @@ export default async function Page({ params }: { params: { slug: string } }) {
 }
 
 export const dynamicParams = false;
+export const runtime = "edge";
