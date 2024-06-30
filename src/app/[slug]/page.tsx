@@ -7,6 +7,8 @@ import { getMetaData } from "@/lib/metadata";
 
 import ClientPage from "./client-page";
 
+export const runtime = 'edge';
+
 export async function generateStaticParams() {
   const pages = await API.getAllPages();
   const paths = pages.allPage.map((page) => ({
