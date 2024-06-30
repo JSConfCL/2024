@@ -13,7 +13,7 @@ export const data = [
       {
         title: "JSConf Chile",
         text: [
-          "JSConf Chile te invita a un mundo donde JavaScript da forma al futuro. Este evento es un crisol de ideas innovadoras, charlas de expertos y una comunidad apasionada por la tecnología. Experimenta la combinación de tecnologías avanzadas de JavaScript, conecta con líderes de la industria y sé parte de un movimiento que impulsa la tecnología hacia adelante.",
+          "JSConf Chile es parte de JavaScript Chile, una organización sin fines de lucro que busca fomentar y potenciar el ecosistema de desarrollo web en Chile. JSConf Chile es un crisol de ideas innovadoras, charlas de expertos y una comunidad apasionada por la tecnología. Experimenta la combinación de tecnologías avanzadas de JavaScript, conecta con líderes de la industria y sé parte de un movimiento que impulsa la tecnología hacia adelante.",
         ],
         url: "",
         actionTitle: "",
@@ -55,7 +55,7 @@ export const data = [
       {
         title: "Galería 2023",
         text: [
-          "Entra en el viaje visual de JSConf Chile 2023 con nuestra galería. Cada foto captura la esencia del evento, desde sesiones innovadoras hasta networking espontáneo. Experimenta el ambiente de colaboración, innovación y el espíritu de una comunidad unida por la pasión por JavaScript.",
+          "Entra en el viaje visual de JSConf Chile 2023 con nuestra galería. Cada foto captura la esencia del evento, desde sesiones innovadoras hasta networking espontáneo. Experimenta el ambiente de colaboración, innovación y el espíritu de una comunidad unida por la pasión por JavaScript y la Web.",
         ],
         url: "https://gallery.jsconf.cl/",
         actionTitle: "Ver la Galería",
@@ -63,7 +63,7 @@ export const data = [
       {
         title: "JavaScript Chile",
         text: [
-          "JavaScript Chile es más que una comunidad; es un centro de innovación y colaboración. Únete para interactuar con talentos locales, participar en proyectos pioneros y contribuir a un ecosistema próspero. Sé parte del movimiento que está dando forma al futuro de la tecnología en Chile y más allá.",
+          "JavaScript Chile es más que una comunidad; es un centro de innovación y colaboración. Una organización sin fines de lucro que busca fomentar y potenciar el ecosistema de desarrollo web en Chile. Únete para interactuar con talentos locales, participar en proyectos pioneros y contribuir a un ecosistema próspero. Sé parte del movimiento que está dando forma al futuro de la tecnología en Chile y más allá.",
         ],
         url: "https://jschile.org/",
         actionTitle: "Saber más de JSChile",
