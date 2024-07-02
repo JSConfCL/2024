@@ -868,6 +868,7 @@ export type Row = {
   children: Maybe<Array<Maybe<CardOrImageOrRichText>>>;
   description: Maybe<RichText>;
   icon: Maybe<Scalars['String']['output']>;
+  inverse: Maybe<Scalars['Boolean']['output']>;
   rowType: Maybe<Scalars['String']['output']>;
   title: Maybe<Scalars['String']['output']>;
 };
@@ -877,6 +878,7 @@ export type RowFilter = {
   _type: InputMaybe<StringFilter>;
   description: InputMaybe<RichTextFilter>;
   icon: InputMaybe<StringFilter>;
+  inverse: InputMaybe<BooleanFilter>;
   rowType: InputMaybe<StringFilter>;
   title: InputMaybe<StringFilter>;
 };
@@ -886,6 +888,7 @@ export type RowSorting = {
   _type: InputMaybe<SortOrder>;
   description: InputMaybe<RichTextSorting>;
   icon: InputMaybe<SortOrder>;
+  inverse: InputMaybe<SortOrder>;
   rowType: InputMaybe<SortOrder>;
   title: InputMaybe<SortOrder>;
 };

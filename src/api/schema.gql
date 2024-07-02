@@ -896,6 +896,7 @@ type Row {
   children: [CardOrImageOrRichText]
   description: RichText
   icon: String
+  inverse: Boolean
   rowType: String
   title: String
 }
@@ -905,6 +906,7 @@ input RowFilter {
   _type: StringFilter
   description: RichTextFilter
   icon: StringFilter
+  inverse: BooleanFilter
   rowType: StringFilter
   title: StringFilter
 }
@@ -914,6 +916,7 @@ input RowSorting {
   _type: SortOrder
   description: RichTextSorting
   icon: SortOrder
+  inverse: SortOrder
   rowType: SortOrder
   title: SortOrder
 }
