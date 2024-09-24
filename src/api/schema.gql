@@ -29,6 +29,8 @@ type Block {
   style: String
 }
 
+union BlockOrImage = Block | Image
+
 input BooleanFilter {
   """Checks if the value is equal to the given input."""
   eq: Boolean
@@ -710,25 +712,19 @@ type RichText {
   _key: String
   _type: String
   htmlTextRaw: JSON
-  markdownText: String
   name: String
-  textType: String
 }
 
 input RichTextFilter {
   _key: StringFilter
   _type: StringFilter
-  markdownText: StringFilter
   name: StringFilter
-  textType: StringFilter
 }
 
 input RichTextSorting {
   _key: SortOrder
   _type: SortOrder
-  markdownText: SortOrder
   name: SortOrder
-  textType: SortOrder
 }
 
 type RootQuery {
@@ -896,6 +892,7 @@ type Row {
   children: [CardOrImageOrRichText]
   description: RichText
   icon: String
+  inverse: Boolean
   rowType: String
   title: String
 }
@@ -905,6 +902,7 @@ input RowFilter {
   _type: StringFilter
   description: RichTextFilter
   icon: StringFilter
+  inverse: BooleanFilter
   rowType: StringFilter
   title: StringFilter
 }
@@ -914,6 +912,7 @@ input RowSorting {
   _type: SortOrder
   description: RichTextSorting
   icon: SortOrder
+  inverse: SortOrder
   rowType: SortOrder
   title: SortOrder
 }

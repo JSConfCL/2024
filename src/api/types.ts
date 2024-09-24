@@ -34,6 +34,8 @@ export type Block = {
   style: Maybe<Scalars['String']['output']>;
 };
 
+export type BlockOrImage = Block | Image;
+
 export type BooleanFilter = {
   /** Checks if the value is equal to the given input. */
   eq: InputMaybe<Scalars['Boolean']['input']>;
@@ -656,25 +658,19 @@ export type RichText = {
   _key: Maybe<Scalars['String']['output']>;
   _type: Maybe<Scalars['String']['output']>;
   htmlTextRaw: Maybe<Scalars['JSON']['output']>;
-  markdownText: Maybe<Scalars['String']['output']>;
   name: Maybe<Scalars['String']['output']>;
-  textType: Maybe<Scalars['String']['output']>;
 };
 
 export type RichTextFilter = {
   _key: InputMaybe<StringFilter>;
   _type: InputMaybe<StringFilter>;
-  markdownText: InputMaybe<StringFilter>;
   name: InputMaybe<StringFilter>;
-  textType: InputMaybe<StringFilter>;
 };
 
 export type RichTextSorting = {
   _key: InputMaybe<SortOrder>;
   _type: InputMaybe<SortOrder>;
-  markdownText: InputMaybe<SortOrder>;
   name: InputMaybe<SortOrder>;
-  textType: InputMaybe<SortOrder>;
 };
 
 export type RootQuery = {
@@ -868,6 +864,7 @@ export type Row = {
   children: Maybe<Array<Maybe<CardOrImageOrRichText>>>;
   description: Maybe<RichText>;
   icon: Maybe<Scalars['String']['output']>;
+  inverse: Maybe<Scalars['Boolean']['output']>;
   rowType: Maybe<Scalars['String']['output']>;
   title: Maybe<Scalars['String']['output']>;
 };
@@ -877,6 +874,7 @@ export type RowFilter = {
   _type: InputMaybe<StringFilter>;
   description: InputMaybe<RichTextFilter>;
   icon: InputMaybe<StringFilter>;
+  inverse: InputMaybe<BooleanFilter>;
   rowType: InputMaybe<StringFilter>;
   title: InputMaybe<StringFilter>;
 };
@@ -886,6 +884,7 @@ export type RowSorting = {
   _type: InputMaybe<SortOrder>;
   description: InputMaybe<RichTextSorting>;
   icon: InputMaybe<SortOrder>;
+  inverse: InputMaybe<SortOrder>;
   rowType: InputMaybe<SortOrder>;
   title: InputMaybe<SortOrder>;
 };
@@ -1530,7 +1529,7 @@ export type GetPageDetailsQueryVariables = Exact<{
 }>;
 
 
-export type GetPageDetailsQuery = { __typename?: 'RootQuery', allPage: Array<{ __typename?: 'Page', _id: string | null, name: string | null, seoTitle: string | null, seoKeywords: string | null, seoDescription: string | null, slug: { __typename?: 'Slug', current: string | null } | null, seoImage: { __typename?: 'Image', asset: { __typename?: 'SanityImageAsset', _id: string | null, altText: string | null, path: string | null, label: string | null, title: string | null } | null } | null, navbar: { __typename?: 'Navbar', links: Array<{ __typename?: 'Link', _key: string | null, url: string | null, text: string | null, target: string | null, icon: string | null, style: string | null } | null> | null } | null, footer: { __typename?: 'Footer', followLinks: Array<{ __typename?: 'Link', _key: string | null, url: string | null, text: string | null, target: string | null, icon: string | null, style: string | null } | null> | null, sectionLinks: Array<{ __typename?: 'Link', _key: string | null, url: string | null, text: string | null, target: string | null, icon: string | null, style: string | null } | null> | null } | null, sections: Array<{ __typename: 'Card' } | { __typename: 'CustomInfo', slug: string | null, name: string | null, description: { __typename?: 'RichText', name: string | null, textType: string | null, htmlTextRaw: unknown | null, markdownText: string | null } | null } | { __typename: 'Hero', heading: string | null, tagline: string | null, icon: string | null, actions: Array<{ __typename?: 'Link', url: string | null, text: string | null, target: string | null, icon: string | null, style: string | null } | null> | null, image: { __typename?: 'Image', asset: { __typename?: 'SanityImageAsset', _id: string | null, _key: string | null, altText: string | null, path: string | null, label: string | null, title: string | null } | null } | null, customAttributes: Array<{ __typename?: 'CustomAttributes', name: string | null, value: string | null } | null> | null } | { __typename: 'RichText', name: string | null, textType: string | null, htmlTextRaw: unknown | null, markdownText: string | null } | { __typename: 'Row', rowType: string | null, title: string | null, icon: string | null, description: { __typename?: 'RichText', name: string | null, htmlTextRaw: unknown | null, markdownText: string | null } | null, children: Array<{ __typename: 'Card', title: string | null, showType: string | null, icon: string | null, description: { __typename?: 'RichText', name: string | null, textType: string | null, htmlTextRaw: unknown | null, markdownText: string | null } | null, image: { __typename?: 'Image', asset: { __typename?: 'SanityImageAsset', _id: string | null, altText: string | null, path: string | null, label: string | null, title: string | null } | null } | null } | { __typename: 'Image', asset: { __typename?: 'SanityImageAsset', _id: string | null, altText: string | null, path: string | null, label: string | null, title: string | null } | null } | { __typename: 'RichText', name: string | null, textType: string | null, htmlTextRaw: unknown | null, markdownText: string | null } | null> | null } | null> | null }> };
+export type GetPageDetailsQuery = { __typename?: 'RootQuery', allPage: Array<{ __typename?: 'Page', _id: string | null, name: string | null, seoTitle: string | null, seoKeywords: string | null, seoDescription: string | null, slug: { __typename?: 'Slug', current: string | null } | null, seoImage: { __typename?: 'Image', asset: { __typename?: 'SanityImageAsset', _id: string | null, altText: string | null, path: string | null, label: string | null, title: string | null } | null } | null, navbar: { __typename?: 'Navbar', links: Array<{ __typename?: 'Link', _key: string | null, url: string | null, text: string | null, target: string | null, icon: string | null, style: string | null } | null> | null } | null, footer: { __typename?: 'Footer', followLinks: Array<{ __typename?: 'Link', _key: string | null, url: string | null, text: string | null, target: string | null, icon: string | null, style: string | null } | null> | null, sectionLinks: Array<{ __typename?: 'Link', _key: string | null, url: string | null, text: string | null, target: string | null, icon: string | null, style: string | null } | null> | null } | null, sections: Array<{ __typename: 'Card' } | { __typename: 'CustomInfo', slug: string | null, name: string | null, description: { __typename?: 'RichText', name: string | null, htmlTextRaw: unknown | null } | null } | { __typename: 'Hero', heading: string | null, tagline: string | null, icon: string | null, actions: Array<{ __typename?: 'Link', url: string | null, text: string | null, target: string | null, icon: string | null, style: string | null } | null> | null, image: { __typename?: 'Image', asset: { __typename?: 'SanityImageAsset', _id: string | null, _key: string | null, altText: string | null, path: string | null, label: string | null, title: string | null } | null } | null, customAttributes: Array<{ __typename?: 'CustomAttributes', name: string | null, value: string | null } | null> | null } | { __typename: 'RichText', name: string | null, htmlTextRaw: unknown | null } | { __typename: 'Row', rowType: string | null, title: string | null, icon: string | null, description: { __typename?: 'RichText', name: string | null, htmlTextRaw: unknown | null } | null, children: Array<{ __typename: 'Card', title: string | null, showType: string | null, icon: string | null, description: { __typename?: 'RichText', name: string | null, htmlTextRaw: unknown | null } | null, image: { __typename?: 'Image', asset: { __typename?: 'SanityImageAsset', _id: string | null, altText: string | null, path: string | null, label: string | null, title: string | null } | null } | null } | { __typename: 'Image', asset: { __typename?: 'SanityImageAsset', _id: string | null, altText: string | null, path: string | null, label: string | null, title: string | null } | null } | { __typename: 'RichText', name: string | null, htmlTextRaw: unknown | null } | null> | null } | null> | null }> };
 
 
 export const GetAllPagesDocument = gql`
@@ -1599,9 +1598,7 @@ export const GetPageDetailsDocument = gql`
         name
         description {
           name
-          textType
           htmlTextRaw
-          markdownText
         }
       }
       ... on Hero {
@@ -1632,9 +1629,7 @@ export const GetPageDetailsDocument = gql`
       }
       ... on RichText {
         name
-        textType
         htmlTextRaw
-        markdownText
       }
       ... on Row {
         rowType
@@ -1642,7 +1637,6 @@ export const GetPageDetailsDocument = gql`
         description {
           name
           htmlTextRaw
-          markdownText
         }
         icon
         children {
@@ -1651,9 +1645,7 @@ export const GetPageDetailsDocument = gql`
             title
             description {
               name
-              textType
               htmlTextRaw
-              markdownText
             }
             showType
             icon
@@ -1678,9 +1670,7 @@ export const GetPageDetailsDocument = gql`
           }
           ... on RichText {
             name
-            textType
             htmlTextRaw
-            markdownText
           }
         }
       }
