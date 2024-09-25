@@ -1519,6 +1519,11 @@ export type StringFilter = {
   nin: InputMaybe<Array<Scalars['String']['input']>>;
 };
 
+export type GetAllcommunitiesQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetAllcommunitiesQuery = { __typename?: 'RootQuery', allCommunity: Array<{ __typename?: 'Community', _id: string | null, name: string | null, webpage: string | null, logo: { __typename?: 'Image', asset: { __typename?: 'SanityImageAsset', _id: string | null, altText: string | null, path: string | null, label: string | null, title: string | null } | null } | null }> };
+
 export type GetAllPagesQueryVariables = Exact<{ [key: string]: never; }>;
 
 
@@ -1532,6 +1537,24 @@ export type GetPageDetailsQueryVariables = Exact<{
 export type GetPageDetailsQuery = { __typename?: 'RootQuery', allPage: Array<{ __typename?: 'Page', _id: string | null, name: string | null, seoTitle: string | null, seoKeywords: string | null, seoDescription: string | null, slug: { __typename?: 'Slug', current: string | null } | null, seoImage: { __typename?: 'Image', asset: { __typename?: 'SanityImageAsset', _id: string | null, altText: string | null, path: string | null, label: string | null, title: string | null } | null } | null, navbar: { __typename?: 'Navbar', links: Array<{ __typename?: 'Link', _key: string | null, url: string | null, text: string | null, target: string | null, icon: string | null, style: string | null } | null> | null } | null, footer: { __typename?: 'Footer', followLinks: Array<{ __typename?: 'Link', _key: string | null, url: string | null, text: string | null, target: string | null, icon: string | null, style: string | null } | null> | null, sectionLinks: Array<{ __typename?: 'Link', _key: string | null, url: string | null, text: string | null, target: string | null, icon: string | null, style: string | null } | null> | null } | null, sections: Array<{ __typename: 'Card' } | { __typename: 'CustomInfo', slug: string | null, name: string | null, description: { __typename?: 'RichText', name: string | null, htmlTextRaw: unknown | null } | null } | { __typename: 'Hero', heading: string | null, tagline: string | null, icon: string | null, actions: Array<{ __typename?: 'Link', url: string | null, text: string | null, target: string | null, icon: string | null, style: string | null } | null> | null, image: { __typename?: 'Image', asset: { __typename?: 'SanityImageAsset', _id: string | null, _key: string | null, altText: string | null, path: string | null, label: string | null, title: string | null } | null } | null, customAttributes: Array<{ __typename?: 'CustomAttributes', name: string | null, value: string | null } | null> | null } | { __typename: 'RichText', name: string | null, htmlTextRaw: unknown | null } | { __typename: 'Row', rowType: string | null, title: string | null, icon: string | null, description: { __typename?: 'RichText', name: string | null, htmlTextRaw: unknown | null } | null, children: Array<{ __typename: 'Card', title: string | null, showType: string | null, icon: string | null, description: { __typename?: 'RichText', name: string | null, htmlTextRaw: unknown | null } | null, image: { __typename?: 'Image', asset: { __typename?: 'SanityImageAsset', _id: string | null, altText: string | null, path: string | null, label: string | null, title: string | null } | null } | null } | { __typename: 'Image', asset: { __typename?: 'SanityImageAsset', _id: string | null, altText: string | null, path: string | null, label: string | null, title: string | null } | null } | { __typename: 'RichText', name: string | null, htmlTextRaw: unknown | null } | null> | null } | null> | null }> };
 
 
+export const GetAllcommunitiesDocument = gql`
+    query getAllcommunities {
+  allCommunity {
+    _id
+    name
+    webpage
+    logo {
+      asset {
+        _id
+        altText
+        path
+        label
+        title
+      }
+    }
+  }
+}
+    `;
 export const GetAllPagesDocument = gql`
     query getAllPages {
   allPage(where: {dynamicPage: {eq: true}}) {
@@ -1686,6 +1709,9 @@ const defaultWrapper: SdkFunctionWrapper = (action, _operationName, _operationTy
 
 export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = defaultWrapper) {
   return {
+    getAllcommunities(variables?: GetAllcommunitiesQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<GetAllcommunitiesQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetAllcommunitiesQuery>(GetAllcommunitiesDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getAllcommunities', 'query', variables);
+    },
     getAllPages(variables?: GetAllPagesQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<GetAllPagesQuery> {
       return withWrapper((wrappedRequestHeaders) => client.request<GetAllPagesQuery>(GetAllPagesDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'getAllPages', 'query', variables);
     },

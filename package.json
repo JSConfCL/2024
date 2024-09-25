@@ -23,7 +23,7 @@
   "dependencies": {
     "@radix-ui/react-dialog": "^1.0.5",
     "@radix-ui/react-scroll-area": "^1.0.5",
-    "@radix-ui/react-slot": "^1.0.2",
+    "@radix-ui/react-slot": "^1.1.0",
     "@sanity/image-url": "^1.0.2",
     "@sanity/vision": "^3.36.3",
     "@tsparticles/engine": "^3.2.2",
@@ -31,6 +31,8 @@
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "easymde": "^2.18.0",
+    "embla-carousel-auto-scroll": "^8.3.0",
+    "embla-carousel-react": "^8.3.0",
     "graphql": "^16.8.1",
     "graphql-request": "^6.1.0",
     "lucide-react": "^0.335.0",

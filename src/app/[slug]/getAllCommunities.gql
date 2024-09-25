@@ -1,0 +1,16 @@
+query getAllcommunities {
+  allCommunity {
+    _id
+    name
+    webpage
+    logo {
+      asset {
+        _id
+        altText
+        path
+        label
+        title
+      }
+    }
+  }
+}
