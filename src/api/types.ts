@@ -50,6 +50,7 @@ export type Card = {
   _key: Maybe<Scalars['String']['output']>;
   _type: Maybe<Scalars['String']['output']>;
   description: Maybe<RichText>;
+  description2: Maybe<RichText>;
   icon: Maybe<Scalars['String']['output']>;
   image: Maybe<Image>;
   showType: Maybe<Scalars['String']['output']>;
@@ -60,13 +61,14 @@ export type CardFilter = {
   _key: InputMaybe<StringFilter>;
   _type: InputMaybe<StringFilter>;
   description: InputMaybe<RichTextFilter>;
+  description2: InputMaybe<RichTextFilter>;
   icon: InputMaybe<StringFilter>;
   image: InputMaybe<ImageFilter>;
   showType: InputMaybe<StringFilter>;
   title: InputMaybe<StringFilter>;
 };
 
-export type CardOrCustomInfoOrHeroOrRichTextOrRow = Card | CustomInfo | Hero | RichText | Row;
+export type CardOrCustomSectionOrHeroOrRichTextOrRow = Card | CustomSection | Hero | RichText | Row;
 
 export type CardOrImageOrRichText = Card | Image | RichText;
 
@@ -74,6 +76,7 @@ export type CardSorting = {
   _key: InputMaybe<SortOrder>;
   _type: InputMaybe<SortOrder>;
   description: InputMaybe<RichTextSorting>;
+  description2: InputMaybe<RichTextSorting>;
   icon: InputMaybe<SortOrder>;
   image: InputMaybe<ImageSorting>;
   showType: InputMaybe<SortOrder>;
@@ -174,8 +177,8 @@ export type CustomAttributesSorting = {
   value: InputMaybe<SortOrder>;
 };
 
-export type CustomInfo = {
-  __typename?: 'CustomInfo';
+export type CustomSection = {
+  __typename?: 'CustomSection';
   _key: Maybe<Scalars['String']['output']>;
   _type: Maybe<Scalars['String']['output']>;
   actions: Maybe<Array<Maybe<Link>>>;
@@ -186,7 +189,7 @@ export type CustomInfo = {
   title: Maybe<Scalars['String']['output']>;
 };
 
-export type CustomInfoFilter = {
+export type CustomSectionFilter = {
   _key: InputMaybe<StringFilter>;
   _type: InputMaybe<StringFilter>;
   description: InputMaybe<RichTextFilter>;
@@ -195,7 +198,7 @@ export type CustomInfoFilter = {
   title: InputMaybe<StringFilter>;
 };
 
-export type CustomInfoSorting = {
+export type CustomSectionSorting = {
   _key: InputMaybe<SortOrder>;
   _type: InputMaybe<SortOrder>;
   description: InputMaybe<RichTextSorting>;
@@ -379,6 +382,7 @@ export type Hero = {
   heading: Maybe<Scalars['String']['output']>;
   icon: Maybe<Scalars['String']['output']>;
   image: Maybe<Image>;
+  specialTagline: Maybe<RichText>;
   tagline: Maybe<Scalars['String']['output']>;
 };
 
@@ -388,6 +392,7 @@ export type HeroFilter = {
   heading: InputMaybe<StringFilter>;
   icon: InputMaybe<StringFilter>;
   image: InputMaybe<ImageFilter>;
+  specialTagline: InputMaybe<RichTextFilter>;
   tagline: InputMaybe<StringFilter>;
 };
 
@@ -397,6 +402,7 @@ export type HeroSorting = {
   heading: InputMaybe<SortOrder>;
   icon: InputMaybe<SortOrder>;
   image: InputMaybe<ImageSorting>;
+  specialTagline: InputMaybe<RichTextSorting>;
   tagline: InputMaybe<SortOrder>;
 };
 
@@ -609,12 +615,13 @@ export type Page = Document & {
   footer: Maybe<Footer>;
   name: Maybe<Scalars['String']['output']>;
   navbar: Maybe<Navbar>;
-  sections: Maybe<Array<Maybe<CardOrCustomInfoOrHeroOrRichTextOrRow>>>;
+  sections: Maybe<Array<Maybe<CardOrCustomSectionOrHeroOrRichTextOrRow>>>;
   seoDescription: Maybe<Scalars['String']['output']>;
   seoImage: Maybe<Image>;
   seoKeywords: Maybe<Scalars['String']['output']>;
   seoTitle: Maybe<Scalars['String']['output']>;
   slug: Maybe<Slug>;
+  theme: Maybe<Scalars['String']['output']>;
 };
 
 export type PageFilter = {
@@ -635,6 +642,7 @@ export type PageFilter = {
   seoKeywords: InputMaybe<StringFilter>;
   seoTitle: InputMaybe<StringFilter>;
   slug: InputMaybe<SlugFilter>;
+  theme: InputMaybe<StringFilter>;
 };
 
 export type PageSorting = {
@@ -651,6 +659,7 @@ export type PageSorting = {
   seoKeywords: InputMaybe<SortOrder>;
   seoTitle: InputMaybe<SortOrder>;
   slug: InputMaybe<SlugSorting>;
+  theme: InputMaybe<SortOrder>;
 };
 
 export type RichText = {
@@ -659,18 +668,21 @@ export type RichText = {
   _type: Maybe<Scalars['String']['output']>;
   htmlTextRaw: Maybe<Scalars['JSON']['output']>;
   name: Maybe<Scalars['String']['output']>;
+  styleModifier: Maybe<Scalars['String']['output']>;
 };
 
 export type RichTextFilter = {
   _key: InputMaybe<StringFilter>;
   _type: InputMaybe<StringFilter>;
   name: InputMaybe<StringFilter>;
+  styleModifier: InputMaybe<StringFilter>;
 };
 
 export type RichTextSorting = {
   _key: InputMaybe<SortOrder>;
   _type: InputMaybe<SortOrder>;
   name: InputMaybe<SortOrder>;
+  styleModifier: InputMaybe<SortOrder>;
 };
 
 export type RootQuery = {
@@ -1315,9 +1327,12 @@ export type Speaker = Document & {
   /** Date the document was last modified */
   _updatedAt: Maybe<Scalars['DateTime']['output']>;
   company: Maybe<Scalars['String']['output']>;
+  companyLogo: Maybe<Image>;
+  companyWebpage: Maybe<Scalars['String']['output']>;
   description: Maybe<RichText>;
   instagram: Maybe<Scalars['String']['output']>;
   isKeynoter: Maybe<Scalars['Boolean']['output']>;
+  isPrevia: Maybe<Scalars['Boolean']['output']>;
   linkedin: Maybe<Scalars['String']['output']>;
   longName: Maybe<Scalars['String']['output']>;
   photos: Maybe<Array<Maybe<Image>>>;
@@ -1339,9 +1354,12 @@ export type SpeakerFilter = {
   _type: InputMaybe<StringFilter>;
   _updatedAt: InputMaybe<DatetimeFilter>;
   company: InputMaybe<StringFilter>;
+  companyLogo: InputMaybe<ImageFilter>;
+  companyWebpage: InputMaybe<StringFilter>;
   description: InputMaybe<RichTextFilter>;
   instagram: InputMaybe<StringFilter>;
   isKeynoter: InputMaybe<BooleanFilter>;
+  isPrevia: InputMaybe<BooleanFilter>;
   linkedin: InputMaybe<StringFilter>;
   longName: InputMaybe<StringFilter>;
   profilePicture: InputMaybe<ImageFilter>;
@@ -1360,9 +1378,12 @@ export type SpeakerSorting = {
   _type: InputMaybe<SortOrder>;
   _updatedAt: InputMaybe<SortOrder>;
   company: InputMaybe<SortOrder>;
+  companyLogo: InputMaybe<ImageSorting>;
+  companyWebpage: InputMaybe<SortOrder>;
   description: InputMaybe<RichTextSorting>;
   instagram: InputMaybe<SortOrder>;
   isKeynoter: InputMaybe<SortOrder>;
+  isPrevia: InputMaybe<SortOrder>;
   linkedin: InputMaybe<SortOrder>;
   longName: InputMaybe<SortOrder>;
   profilePicture: InputMaybe<ImageSorting>;
@@ -1534,7 +1555,7 @@ export type GetPageDetailsQueryVariables = Exact<{
 }>;
 
 
-export type GetPageDetailsQuery = { __typename?: 'RootQuery', allPage: Array<{ __typename?: 'Page', _id: string | null, name: string | null, seoTitle: string | null, seoKeywords: string | null, seoDescription: string | null, slug: { __typename?: 'Slug', current: string | null } | null, seoImage: { __typename?: 'Image', asset: { __typename?: 'SanityImageAsset', _id: string | null, altText: string | null, path: string | null, label: string | null, title: string | null } | null } | null, navbar: { __typename?: 'Navbar', links: Array<{ __typename?: 'Link', _key: string | null, url: string | null, text: string | null, target: string | null, icon: string | null, style: string | null } | null> | null } | null, footer: { __typename?: 'Footer', followLinks: Array<{ __typename?: 'Link', _key: string | null, url: string | null, text: string | null, target: string | null, icon: string | null, style: string | null } | null> | null, sectionLinks: Array<{ __typename?: 'Link', _key: string | null, url: string | null, text: string | null, target: string | null, icon: string | null, style: string | null } | null> | null } | null, sections: Array<{ __typename: 'Card' } | { __typename: 'CustomInfo', slug: string | null, name: string | null, description: { __typename?: 'RichText', name: string | null, htmlTextRaw: unknown | null } | null } | { __typename: 'Hero', heading: string | null, tagline: string | null, icon: string | null, actions: Array<{ __typename?: 'Link', url: string | null, text: string | null, target: string | null, icon: string | null, style: string | null } | null> | null, image: { __typename?: 'Image', asset: { __typename?: 'SanityImageAsset', _id: string | null, _key: string | null, altText: string | null, path: string | null, label: string | null, title: string | null } | null } | null, customAttributes: Array<{ __typename?: 'CustomAttributes', name: string | null, value: string | null } | null> | null } | { __typename: 'RichText', name: string | null, htmlTextRaw: unknown | null } | { __typename: 'Row', rowType: string | null, title: string | null, icon: string | null, description: { __typename?: 'RichText', name: string | null, htmlTextRaw: unknown | null } | null, children: Array<{ __typename: 'Card', title: string | null, showType: string | null, icon: string | null, description: { __typename?: 'RichText', name: string | null, htmlTextRaw: unknown | null } | null, image: { __typename?: 'Image', asset: { __typename?: 'SanityImageAsset', _id: string | null, altText: string | null, path: string | null, label: string | null, title: string | null } | null } | null } | { __typename: 'Image', asset: { __typename?: 'SanityImageAsset', _id: string | null, altText: string | null, path: string | null, label: string | null, title: string | null } | null } | { __typename: 'RichText', name: string | null, htmlTextRaw: unknown | null } | null> | null } | null> | null }> };
+export type GetPageDetailsQuery = { __typename?: 'RootQuery', allPage: Array<{ __typename?: 'Page', _id: string | null, name: string | null, seoTitle: string | null, seoKeywords: string | null, seoDescription: string | null, slug: { __typename?: 'Slug', current: string | null } | null, seoImage: { __typename?: 'Image', asset: { __typename?: 'SanityImageAsset', _id: string | null, altText: string | null, path: string | null, label: string | null, title: string | null } | null } | null, navbar: { __typename?: 'Navbar', links: Array<{ __typename?: 'Link', _key: string | null, url: string | null, text: string | null, target: string | null, icon: string | null, style: string | null } | null> | null } | null, footer: { __typename?: 'Footer', followLinks: Array<{ __typename?: 'Link', _key: string | null, url: string | null, text: string | null, target: string | null, icon: string | null, style: string | null } | null> | null, sectionLinks: Array<{ __typename?: 'Link', _key: string | null, url: string | null, text: string | null, target: string | null, icon: string | null, style: string | null } | null> | null } | null, sections: Array<{ __typename: 'Card' } | { __typename: 'CustomSection' } | { __typename: 'Hero', heading: string | null, tagline: string | null, icon: string | null, actions: Array<{ __typename?: 'Link', url: string | null, text: string | null, target: string | null, icon: string | null, style: string | null } | null> | null, image: { __typename?: 'Image', asset: { __typename?: 'SanityImageAsset', _id: string | null, _key: string | null, altText: string | null, path: string | null, label: string | null, title: string | null } | null } | null, customAttributes: Array<{ __typename?: 'CustomAttributes', name: string | null, value: string | null } | null> | null } | { __typename: 'RichText', name: string | null, htmlTextRaw: unknown | null } | { __typename: 'Row', rowType: string | null, title: string | null, icon: string | null, description: { __typename?: 'RichText', name: string | null, htmlTextRaw: unknown | null } | null, children: Array<{ __typename: 'Card', title: string | null, showType: string | null, icon: string | null, description: { __typename?: 'RichText', name: string | null, htmlTextRaw: unknown | null } | null, image: { __typename?: 'Image', asset: { __typename?: 'SanityImageAsset', _id: string | null, altText: string | null, path: string | null, label: string | null, title: string | null } | null } | null } | { __typename: 'Image', asset: { __typename?: 'SanityImageAsset', _id: string | null, altText: string | null, path: string | null, label: string | null, title: string | null } | null } | { __typename: 'RichText', name: string | null, htmlTextRaw: unknown | null } | null> | null } | null> | null }> };
 
 
 export const GetAllcommunitiesDocument = gql`
@@ -1616,14 +1637,6 @@ export const GetPageDetailsDocument = gql`
     }
     sections {
       __typename
-      ... on CustomInfo {
-        slug
-        name
-        description {
-          name
-          htmlTextRaw
-        }
-      }
       ... on Hero {
         heading
         tagline

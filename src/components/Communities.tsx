@@ -44,53 +44,58 @@ export const Communities = ({ communities, theme }: CommunitiesProps) => {
   const communitiesItems = repeatArrayUntilMinLength(communities.allCommunity);
 
   return (
-    <Carousel
-      opts={{
-        align: "start",
-        loop: true,
-      }}
-      plugins={[
-        Autoscroll({
-          speed: 0.5,
-        }),
-      ]}
-      className="relative w-full"
-    >
-      <div
-        className={cn(
-          "left-0 bg-gradient-to-r",
-          communitiesVariants({ theme }),
-        )}
-      />
-      <div
-        className={cn(
-          "right-0 bg-gradient-to-l",
-          communitiesVariants({ theme }),
-        )}
-      />
-      <CarouselContent>
-        {communitiesItems.map((item) => (
-          <CarouselItem key={item._id} className="md:basis-1/2 lg:basis-1/6">
-            {item.logo && (
-              <Image
-                src={urlForImage(item.logo.asset as unknown as ImageType)}
-                alt={item.name ?? ""}
-                width={50}
-                height={50}
-              />
-            )}
-            {item.webpage && (
-              <Link
-                href={item.webpage}
-                target="_blank"
-                className={cn({ "text-black": theme === "light" })}
-              >
-                Ver más
-              </Link>
-            )}
-          </CarouselItem>
-        ))}
-      </CarouselContent>
-    </Carousel>
+    <>
+      <h2 className="mb-20 text-center font-barlow text-5xl font-semibold uppercase">
+        Comunidades Amigas
+      </h2>
+      <Carousel
+        opts={{
+          align: "start",
+          loop: true,
+        }}
+        plugins={[
+          Autoscroll({
+            speed: 0.5,
+          }),
+        ]}
+        className="relative w-full"
+      >
+        <div
+          className={cn(
+            "left-0 bg-gradient-to-r",
+            communitiesVariants({ theme }),
+          )}
+        />
+        <div
+          className={cn(
+            "right-0 bg-gradient-to-l",
+            communitiesVariants({ theme }),
+          )}
+        />
+        <CarouselContent>
+          {communitiesItems.map((item) => (
+            <CarouselItem key={item._id} className="md:basis-1/2 lg:basis-1/6">
+              {item.logo && (
+                <Image
+                  src={urlForImage(item.logo.asset as unknown as ImageType)}
+                  alt={item.name ?? ""}
+                  width={50}
+                  height={50}
+                />
+              )}
+              {item.webpage && (
+                <Link
+                  href={item.webpage}
+                  target="_blank"
+                  className={cn({ "text-black": theme === "light" })}
+                >
+                  Ver más
+                </Link>
+              )}
+            </CarouselItem>
+          ))}
+        </CarouselContent>
+      </Carousel>
+    </>
   );
 };

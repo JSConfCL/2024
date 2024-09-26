@@ -47,16 +47,16 @@ query getPageDetails($input: String!) {
     }
     sections {
       __typename
-      ... on CustomInfo {
-        slug
-        name
-        description {
-          name
-          # textType
-          htmlTextRaw
-          # markdownText
-        }
-      }
+      # ... on CustomInfo {
+      #   slug
+      #   name
+      #   description {
+      #     name
+      #     # textType
+      #     htmlTextRaw
+      #     # markdownText
+      #   }
+      # }
       ... on Hero {
         heading
         tagline

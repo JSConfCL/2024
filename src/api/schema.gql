@@ -46,6 +46,7 @@ type Card {
   _key: String
   _type: String
   description: RichText
+  description2: RichText
   icon: String
   image: Image
   showType: String
@@ -56,13 +57,14 @@ input CardFilter {
   _key: StringFilter
   _type: StringFilter
   description: RichTextFilter
+  description2: RichTextFilter
   icon: StringFilter
   image: ImageFilter
   showType: StringFilter
   title: StringFilter
 }
 
-union CardOrCustomInfoOrHeroOrRichTextOrRow = Card | CustomInfo | Hero | RichText | Row
+union CardOrCustomSectionOrHeroOrRichTextOrRow = Card | CustomSection | Hero | RichText | Row
 
 union CardOrImageOrRichText = Card | Image | RichText
 
@@ -70,6 +72,7 @@ input CardSorting {
   _key: SortOrder
   _type: SortOrder
   description: RichTextSorting
+  description2: RichTextSorting
   icon: SortOrder
   image: ImageSorting
   showType: SortOrder
@@ -171,7 +174,7 @@ input CustomAttributesSorting {
   value: SortOrder
 }
 
-type CustomInfo {
+type CustomSection {
   _key: String
   _type: String
   actions: [Link]
@@ -182,7 +185,7 @@ type CustomInfo {
   title: String
 }
 
-input CustomInfoFilter {
+input CustomSectionFilter {
   _key: StringFilter
   _type: StringFilter
   description: RichTextFilter
@@ -191,7 +194,7 @@ input CustomInfoFilter {
   title: StringFilter
 }
 
-input CustomInfoSorting {
+input CustomSectionSorting {
   _key: SortOrder
   _type: SortOrder
   description: RichTextSorting
@@ -407,6 +410,7 @@ type Hero {
   heading: String
   icon: String
   image: Image
+  specialTagline: RichText
   tagline: String
 }
 
@@ -416,6 +420,7 @@ input HeroFilter {
   heading: StringFilter
   icon: StringFilter
   image: ImageFilter
+  specialTagline: RichTextFilter
   tagline: StringFilter
 }
 
@@ -425,6 +430,7 @@ input HeroSorting {
   heading: SortOrder
   icon: SortOrder
   image: ImageSorting
+  specialTagline: RichTextSorting
   tagline: SortOrder
 }
 
@@ -664,12 +670,13 @@ type Page implements Document {
   footer: Footer
   name: String
   navbar: Navbar
-  sections: [CardOrCustomInfoOrHeroOrRichTextOrRow]
+  sections: [CardOrCustomSectionOrHeroOrRichTextOrRow]
   seoDescription: String
   seoImage: Image
   seoKeywords: String
   seoTitle: String
   slug: Slug
+  theme: String
 }
 
 input PageFilter {
@@ -690,6 +697,7 @@ input PageFilter {
   seoKeywords: StringFilter
   seoTitle: StringFilter
   slug: SlugFilter
+  theme: StringFilter
 }
 
 input PageSorting {
@@ -706,6 +714,7 @@ input PageSorting {
   seoKeywords: SortOrder
   seoTitle: SortOrder
   slug: SlugSorting
+  theme: SortOrder
 }
 
 type RichText {
@@ -713,18 +722,21 @@ type RichText {
   _type: String
   htmlTextRaw: JSON
   name: String
+  styleModifier: String
 }
 
 input RichTextFilter {
   _key: StringFilter
   _type: StringFilter
   name: StringFilter
+  styleModifier: StringFilter
 }
 
 input RichTextSorting {
   _key: SortOrder
   _type: SortOrder
   name: SortOrder
+  styleModifier: SortOrder
 }
 
 type RootQuery {
@@ -1352,9 +1364,12 @@ type Speaker implements Document {
   """Date the document was last modified"""
   _updatedAt: DateTime
   company: String
+  companyLogo: Image
+  companyWebpage: String
   description: RichText
   instagram: String
   isKeynoter: Boolean
+  isPrevia: Boolean
   linkedin: String
   longName: String
   photos: [Image]
@@ -1376,9 +1391,12 @@ input SpeakerFilter {
   _type: StringFilter
   _updatedAt: DatetimeFilter
   company: StringFilter
+  companyLogo: ImageFilter
+  companyWebpage: StringFilter
   description: RichTextFilter
   instagram: StringFilter
   isKeynoter: BooleanFilter
+  isPrevia: BooleanFilter
   linkedin: StringFilter
   longName: StringFilter
   profilePicture: ImageFilter
@@ -1397,9 +1415,12 @@ input SpeakerSorting {
   _type: SortOrder
   _updatedAt: SortOrder
   company: SortOrder
+  companyLogo: ImageSorting
+  companyWebpage: SortOrder
   description: RichTextSorting
   instagram: SortOrder
   isKeynoter: SortOrder
+  isPrevia: SortOrder
   linkedin: SortOrder
   longName: SortOrder
   profilePicture: ImageSorting
