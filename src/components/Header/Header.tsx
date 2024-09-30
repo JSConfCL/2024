@@ -4,7 +4,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { Link as LinkType } from "@/api/types";
 
-import { Logo } from "@/components/Icons/Logo";
+import { Logo } from "@/components/Icons";
 import { SocialLink } from "@/components/SocialLink/SocialLink";
 import { links as socialLinks } from "@/lib/data";
 import { theme } from "@/lib/theme";
@@ -37,7 +37,7 @@ export function Header({ links }: HeaderProps) {
             ))
           : socialLinks.map((link) => <SocialLink key={link.id} link={link} />)}
       </div>
-      {links?.length ? <MobileNav links={links} activePath={pathname} /> : null}
+      {links?.length ? <MobileNav links={links} activePath={pathname ?? ""} /> : null}
     </header>
   );
 }

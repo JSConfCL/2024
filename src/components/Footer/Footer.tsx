@@ -8,8 +8,7 @@ import {
   Twitter,
 } from "lucide-react";
 
-import { Logo } from "@/components/Icons/Logo";
-import { Title } from "@/components/Icons/Title";
+import { Logo, Title } from "@/components/Icons";
 import { Link } from "@/components/Link";
 import { footer, links } from "@/lib/data";
 import { theme } from "@/lib/theme";
@@ -33,7 +32,7 @@ export function Footer({ followLinks, sectionLinks }: FooterProps) {
   return (
     <footer className="relative z-10 font-barlow text-white">
       <div className="absolute inset-0 -z-10 w-[80%] bg-gradient-to-r from-jsconf-yellow via-jsconf-yellow to-transparent opacity-10 content-[''] md:w-[60%] md:from-transparent md:via-jsconf-yellow" />
-      <div className="mx-6 flex flex-col before:top-0 before:h-0.5 before:w-full before:bg-gradient-to-r before:from-transparent before:from-10% before:via-jsconf-yellow before:via-50% before:to-transparent before:to-90% before:content-[''] lg:mx-auto lg:w-11/12 xl:w-8/12">
+      <div className="mx-6 flex max-w-[1136px] flex-col px-4 before:top-0 before:h-0.5 before:w-full before:bg-gradient-to-r before:from-transparent before:from-10% before:via-jsconf-yellow before:via-50% before:to-transparent before:to-90% before:content-[''] lg:mx-auto">
         <div className="flex w-full flex-col gap-8 py-14">
           <div className="z-10 grid grid-cols-1 gap-6 px-6 lg:grid-cols-8 lg:gap-8 lg:px-0">
             <div className="col-span-1 flex flex-col items-center gap-4 lg:col-span-2 lg:items-start">

@@ -7,7 +7,7 @@ import { cva, type VariantProps } from "class-variance-authority";
 import { cn } from "@/lib/utils";
 
 const linkVariants = cva(
-  "relative mb-2 flex w-full items-center justify-center gap-3 rounded-md px-8 py-4 text-sm font-semibold",
+  "relative flex w-full items-center justify-center rounded-md text-sm font-semibold",
   {
     variants: {
       variant: {
@@ -17,9 +17,14 @@ const linkVariants = cva(
         link: "mb-0 w-auto p-0 text-base font-normal hover:text-jsconf-yellow",
         transparent: "rounded-full p-2 hover:bg-[#EDE06033]",
       },
+      size: {
+        default: "gap-3 px-8 py-4",
+        small: "gap-2 px-4 py-3",
+      },
     },
     defaultVariants: {
       variant: "default",
+      size: "default",
     },
   },
 );
@@ -31,11 +36,16 @@ export interface CustomLinkProps extends VariantProps<typeof linkVariants> {
   rel?: string;
 }
 
-export const Link = ({ variant, children, ...props }: CustomLinkProps) => {
+export const Link = ({
+  variant,
+  size,
+  children,
+  ...props
+}: CustomLinkProps) => {
   const Comp = props.href.startsWith("/") ? NextLink : "a";
 
   return (
-    <Comp {...props} className={cn(linkVariants({ variant }))}>
+    <Comp {...props} className={cn(linkVariants({ variant, size }))}>
       {children}
     </Comp>
   );
