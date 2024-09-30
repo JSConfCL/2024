@@ -34,18 +34,20 @@ export interface CustomLinkProps extends VariantProps<typeof linkVariants> {
   children: string | React.ReactNode;
   target?: string;
   rel?: string;
+  className?: string;
 }
 
 export const Link = ({
   variant,
   size,
   children,
+  className,
   ...props
 }: CustomLinkProps) => {
   const Comp = props.href.startsWith("/") ? NextLink : "a";
 
   return (
-    <Comp {...props} className={cn(linkVariants({ variant, size }))}>
+    <Comp {...props} className={cn(linkVariants({ variant, size }), className)}>
       {children}
     </Comp>
   );

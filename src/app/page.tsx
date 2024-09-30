@@ -1,14 +1,13 @@
-import { ChevronDown, ScrollText, Star } from "lucide-react";
+import { ChevronDown, Star, Tickets } from "lucide-react";
 
 import { EventInfo } from "@/sections/EventInfo/EventInfo";
 import { Card } from "@/components/Card";
 import { Footer } from "@/components/Footer/Footer";
 import { Header } from "@/components/Header/Header";
-import { Mountain } from "@/components/Icons/Mountain";
-import { Title } from "@/components/Icons/Title";
+import { Mountain, Title } from "@/components/Icons";
 import { Link } from "@/components/Link";
 import { Particles } from "@/components/Particles";
-import { data } from "@/lib/data";
+import { data, JSCONF } from "@/lib/data";
 import { getMetaData, getViewports } from "@/lib/metadata";
 import { cn } from "@/lib/utils";
 
@@ -59,8 +58,13 @@ export default function Home() {
                   </Link>
                 </div>
                 <div className="w-full md:w-auto">
-                  <Link href="/cfp" variant="outline">
-                    Registro CFP <ScrollText size={16} />
+                  <Link
+                    href={JSCONF.ticketsCommunity}
+                    target="_blank"
+                    rel="noreferrer"
+                    variant="outline"
+                  >
+                    Tickets <Tickets size={16} />
                   </Link>
                 </div>
               </div>
