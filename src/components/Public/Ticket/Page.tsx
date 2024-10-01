@@ -67,7 +67,7 @@ const PublicTicketPage = ({
 
         <meta
           property="og:url"
-          content={`${JSCONF.ticketsApi}/ticket/image/${id}`}
+          content={`${JSCONF.imagesApi}?ticketId=${id}`}
         />
 
         <meta property="og:type" content="website" />
