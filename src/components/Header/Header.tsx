@@ -3,10 +3,12 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { Link as LinkType } from "@/api/types";
+import { Tickets } from "lucide-react";
 
-import { Logo } from "@/components/Icons/Logo";
+import { Logo } from "@/components/Icons";
+import { Link as LinkComp } from "@/components/Link";
 import { SocialLink } from "@/components/SocialLink/SocialLink";
-import { links as socialLinks } from "@/lib/data";
+import { JSCONF, links as socialLinks } from "@/lib/data";
 import { theme } from "@/lib/theme";
 import { cn } from "@/lib/utils";
 
@@ -36,8 +38,18 @@ export function Header({ links }: HeaderProps) {
               />
             ))
           : socialLinks.map((link) => <SocialLink key={link.id} link={link} />)}
+        <LinkComp
+          href={JSCONF.ticketsCommunity}
+          target="_blank"
+          rel="noreferrer"
+          size="small"
+        >
+          Tickets <Tickets size={16} />
+        </LinkComp>
       </div>
-      {links?.length ? <MobileNav links={links} activePath={pathname} /> : null}
+      {links?.length ? (
+        <MobileNav links={links} activePath={pathname ?? ""} />
+      ) : null}
     </header>
   );
 }

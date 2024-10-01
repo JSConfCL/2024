@@ -130,4 +130,7 @@ export const JSCONF = {
   endDate: new Date("12/07/2024 17:00:00"),
   strDates: "DIC 05, 06, 07 2024",
   place: "Santiago, Chile",
+  webpage: process.env.NEXT_PUBLIC_WEBPAGE ?? "",
+  ticketsCommunity: process.env.NEXT_PUBLIC_COMMUNITY_EVENT_URL ?? "",
+  ticketsApi: process.env.NEXT_PUBLIC_TICKETS_API_URL ?? "",
 };
