@@ -131,6 +131,7 @@ export const JSCONF = {
   strDates: "DIC 05, 06, 07 2024",
   place: "Santiago, Chile",
   imagesApi: process.env.NEXT_PUBLIC_IMAGES_API_URL ?? "",
+  shareWebpage: process.env.NEXT_PUBLIC_SHARE_WEBPAGE ?? "",
   webpage: process.env.NEXT_PUBLIC_WEBPAGE ?? "",
   ticketsCommunity: process.env.NEXT_PUBLIC_COMMUNITY_EVENT_URL ?? "",
   ticketsApi: process.env.NEXT_PUBLIC_TICKETS_API_URL ?? "",
