@@ -16,7 +16,7 @@ export interface PublicTicketProps {
 }
 
 // eslint-disable-next-line no-empty-pattern
-export const PublicTicket = ({ legalName, userName }: PublicTicketProps) => {
+export const PublicTicket = ({ legalName }: PublicTicketProps) => {
   return (
     <Atropos className="my-atropos">
       <div className="relative h-[640px] max-h-[90%] w-[420px] max-w-[90%] rounded-xl bg-[#121212]">
@@ -63,7 +63,7 @@ export const PublicTicket = ({ legalName, userName }: PublicTicketProps) => {
                   className="font-inconsolata text-2xl font-bold text-jsconf-yellow"
                   data-atropos-offset="5"
                 >
-                  {userName ? `@${userName}` : ""}
+                  &nbsp;
                 </h3>
                 <h3 className="rounded-lg bg-[#090907B2] p-2 font-inconsolata text-2xl font-bold text-white">
                   Entrada General
