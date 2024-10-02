@@ -118,7 +118,7 @@ const PublicTicketPage = ({
                   Tickets
                 </Link>
                 <Link
-                  href="/"
+                  href={JSCONF.webpage}
                   className="w-full bg-secondary py-3  text-secondary-foreground  hover:bg-secondary/80 md:w-auto"
                 >
                   JSConf 2024
