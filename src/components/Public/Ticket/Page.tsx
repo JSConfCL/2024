@@ -1,5 +1,6 @@
 import Head from "next/head";
 
+import { buttonVariants } from "@/components/ui/button";
 import { Link } from "@/components/Link";
 import { SocialLink } from "@/components/SocialLink/SocialLink";
 import { JSCONF } from "@/lib/data";
@@ -55,7 +56,7 @@ const PublicTicketPage = ({
   return (
     <div>
       <Head>
-        <title>{userInfo.userName} 💛 JSConf Chile</title>
+        <title>{userInfo.legalName} 💛 JSConf Chile</title>
         <meta
           name="description"
           content="Mi Ticket para la JSConf Chile. Obtén tu ticket acá!"
@@ -66,7 +67,7 @@ const PublicTicketPage = ({
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content={`${userInfo.userName} 💛 JSConf Chile`}
+          content={`${userInfo.legalName} 💛 JSConf Chile`}
         />
         <meta
           property="og:description"
@@ -81,7 +82,7 @@ const PublicTicketPage = ({
         <meta property="twitter:url" content={publicUrl} />
         <meta
           name="twitter:title"
-          content={`${userInfo.userName} 💛 JSConf Chile`}
+          content={`${userInfo.legalName} 💛 JSConf Chile`}
         />
         <meta
           name="twitter:description"
@@ -106,7 +107,18 @@ const PublicTicketPage = ({
                 Los días 5, 6 y 7 de diciembre
               </div>
               <div className="font-barlow text-base md:text-xl	">
-                Conoce más detalles visita loremipsum.com
+                Conoce más detalles visita:{" "}
+                <a
+                  href={JSCONF.webpage}
+                  className={cn(
+                    buttonVariants({ variant: "link" }),
+                    "inline p-0 text-xl text-jsconf-yellow",
+                  )}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                >
+                  {JSCONF.webpage}
+                </a>
               </div>
               <div className="flex flex-col gap-4 md:flex-row">
                 <Link
@@ -120,6 +132,8 @@ const PublicTicketPage = ({
                 <Link
                   href={JSCONF.webpage}
                   className="w-full bg-secondary py-3  text-secondary-foreground  hover:bg-secondary/80 md:w-auto"
+                  target="_blank"
+                  rel="noreferrer noopener"
                 >
                   JSConf 2024
                 </Link>
