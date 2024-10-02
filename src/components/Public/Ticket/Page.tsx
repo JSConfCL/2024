@@ -56,7 +56,7 @@ const PublicTicketPage = ({
   return (
     <div>
       <Head>
-        <title>{userInfo.userName} 💛 JSConf Chile</title>
+        <title>{userInfo.legalName} 💛 JSConf Chile</title>
         <meta
           name="description"
           content="Mi Ticket para la JSConf Chile. Obtén tu ticket acá!"
@@ -67,7 +67,7 @@ const PublicTicketPage = ({
         <meta property="og:type" content="website" />
         <meta
           property="og:title"
-          content={`${userInfo.userName} 💛 JSConf Chile`}
+          content={`${userInfo.legalName} 💛 JSConf Chile`}
         />
         <meta
           property="og:description"
@@ -82,7 +82,7 @@ const PublicTicketPage = ({
         <meta property="twitter:url" content={publicUrl} />
         <meta
           name="twitter:title"
-          content={`${userInfo.userName} 💛 JSConf Chile`}
+          content={`${userInfo.legalName} 💛 JSConf Chile`}
         />
         <meta
           name="twitter:description"
